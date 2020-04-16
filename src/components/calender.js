@@ -1,7 +1,7 @@
 import 'moment/locale/it.js';
 import React, {Component} from 'react'
 import { DatePicker, DatePickerInput } from 'rc-datepicker';
-
+import 'rc-datepicker/lib/style.css'
 
 class Calender extends Component {
   constructor(props){
@@ -12,7 +12,7 @@ class Calender extends Component {
   }
   
   render() {
-    const date = '2015-06-26' 
+    const date = '2020-04-16' 
     return(
       <div> 
     <DatePickerInput
