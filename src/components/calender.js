@@ -1,4 +1,4 @@
-import 'moment/locale/it.js';
+import 'moment/locale/en-gb.js';
 import React, {Component} from 'react'
 import { DatePicker, DatePickerInput } from 'rc-datepicker';
 import 'rc-datepicker/lib/style.css'
@@ -21,8 +21,9 @@ class Calender extends Component {
       className='my-custom-datepicker-component'
       // {...anyReactInputProps}
     />
-    <DatePicker onChange={this.onChange} value={date} />
-
+    <div data-test='calenderComponent'>
+    <DatePicker onChange={this.onChange} value={date}/>
+    </div>
       </div>
     )
   }
