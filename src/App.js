@@ -1,6 +1,6 @@
 import React, {Component }  from 'react';
 import './App.css';
-import Calender from './components/calender'
+import Home from './components/home'
 
 class App extends Component{
   constructor(props){
@@ -19,7 +19,7 @@ class App extends Component{
     <div className="App">
       <h1> Meal Mapper</h1>
       <h2> Select a date to plan your next meal</h2>
-      <Calender datePicked={this.datePicked}/> 
+      <Home datePicked={this.datePicked}/> 
     </div>
   );
 }}
