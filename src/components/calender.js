@@ -9,19 +9,20 @@ class Calender extends Component {
     super(props)
     this.state ={
       selectedDate: '2020-04-16',
-      datePickerInputDate: null,
+      // datePickerInputDate: null,
       datePickerInputDate2: null,
       showInput: true,
     }
     this.onChange = this.onChange.bind(this)
   }
   onChange = async ( dateString, e) => {
-    const fullDate = '' + dateString
-    const date = fullDate[8] + fullDate[9]
-    const month = monthConverter.Months[fullDate[4]+fullDate[5]+fullDate[6]]
-    const Year = fullDate[11] + fullDate[12] + fullDate[13] + fullDate[14]
-    await this.setState({ datePickerInputDate: date + '-' + month + '-' + Year })
-    console.log(this.state.datePickerInputDate)
+    const fullDateString = '' + dateString
+    const date = fullDateString[8] + fullDateString[9]
+    const month = monthConverter.Months[fullDateString[4]+fullDateString[5]+fullDateString[6]]
+    const Year = fullDateString[11] + fullDateString[12] + fullDateString[13] + fullDateString[14]
+    const fullDate = date + '-' + month + '-' + Year
+    await this.setState({ datePickerInputDate: fullDate })
+    this.props.datePicked(fullDate)
   }
   
   render() {
