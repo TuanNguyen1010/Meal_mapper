@@ -1,26 +1,20 @@
 import React, {Component }  from 'react';
 import './App.css';
-import Home from './components/home'
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import Home from './pages/homePage'
+import Recipes from './pages/recipes'
 
 class App extends Component{
-  constructor(props){
-    super(props)
-    this.state ={
-      selectedDate: '2020-04-16',
-    }
-    this.datePicked = this.datePicked.bind(this) 
-  }
-  datePicked = async (date) => {
-    await this.setState( {selectedDate: date})
-    console.log(this.state.selectedDate)
-  }
+
   render() {
   return (
+    <Router>
     <div className="App">
-      <h1> Meal Mapper</h1>
-      <h2> Select a date to plan your next meal</h2>
-      <Home datePicked={this.datePicked}/> 
+      <Route path='/' exact component={Home}></Route>
+      <Route path='/date/:dateId' component={Recipes}></Route>
+      {/* <Home datePicked={this.datePicked}/>  */}
     </div>
+    </Router>
   );
 }}
 

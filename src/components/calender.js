@@ -22,7 +22,8 @@ class Calender extends Component {
     const Year = fullDateString[11] + fullDateString[12] + fullDateString[13] + fullDateString[14]
     const fullDate = date + '-' + month + '-' + Year
     await this.setState({ datePickerInputDate: fullDate })
-    this.props.datePicked(fullDate)
+    console.log(this.state.datePickerInputDate)
+    // this.props.datePicked(fullDate)
   }
   
   render() {
