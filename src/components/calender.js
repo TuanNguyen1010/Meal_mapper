@@ -3,15 +3,17 @@ import React, {Component} from 'react'
 import {DatePickerInput } from 'rc-datepicker';
 import 'rc-datepicker/lib/style.css'
 import monthConverter from '../monthConverter.json'
+import { Redirect } from 'react-router-dom'
 
 class Calender extends Component {
   constructor(props){
     super(props)
     this.state ={
-      selectedDate: '2020-04-16',
-      // datePickerInputDate: null,
-      datePickerInputDate2: null,
-      showInput: true,
+      dateToday: '2020-04-16',
+      datePickerInputDate: null,
+      // datePickerInputDate2: null,
+      // showInput: true,
+      redirect: false
     }
     this.onChange = this.onChange.bind(this)
   }
@@ -23,18 +25,33 @@ class Calender extends Component {
     const fullDate = date + '-' + month + '-' + Year
     await this.setState({ datePickerInputDate: fullDate })
     console.log(this.state.datePickerInputDate)
+    this.setRedirect()
+    console.log(this.state.redirect)
     // this.props.datePicked(fullDate)
+  }
+
+  setRedirect = () => {
+    this.setState({
+      redirect: true
+    })
+  }
+
+  renderRedirect = (datePicked) => {
+    if (this.state.redirect) {
+      return <Redirect to={'/date/' + datePicked}  />
+    }
   }
   
   render() {
     return(
       <div>
+        {this.renderRedirect(this.state.datePickerInputDate)}
         <div data-test='calenderComponent'>
           <DatePickerInput
             onChange={(dateString) => { 
               this.onChange(dateString)
             }}
-            value={this.state.selectedDate}
+            value={this.state.dateToday}
             className='my-custom-datepicker-component'
             // {...anyReactInputProps}
           />
