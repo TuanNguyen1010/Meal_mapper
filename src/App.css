@@ -36,3 +36,61 @@
     transform: rotate(360deg);
   }
 }
+
+nav{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 10vh;
+  background-color: firebrick;
+  color: black;
+}
+
+ .nav-links{
+   font-size: 20px;
+   font-weight: bold;
+   background-color: firebrick;
+   list-style: none;
+   justify-content: space-around;
+   align-items: center;
+   display: flex;
+   width: 40%;
+ }
+ 
+.recipe-component, .recipe-container {
+  display: flex;
+}
+
+.recipe-component {
+  justify-content: center;
+  padding: 10px;
+}
+
+.recipe-container {
+  background-color: rgb(235,235,235, 0.8);
+}
+
+.title-container {
+  font-size: 30px;
+  margin-left: 90px;
+  justify-content: center;
+}
+
+.image {
+  justify-content: left;
+  width: 20%;
+  margin-left: 90px;
+  margin-bottom: 10px;
+}
+.calories {
+}
+
+.ingredients {
+    background-color: #6c757d;
+  margin-right: 25px;
+  justify-content: space-between;
+  display: flex;
+  flex-direction: column; 
+  width: 60%;
+  padding: 25px;
+}
