@@ -3,13 +3,14 @@ nav{
   justify-content: space-around;
   align-items: center;
   min-height: 10vh;
-  background-color: lightblue;
+  background-color: firebrick;
   color: black;
 }
 
  .nav-links{
    font-size: 20px;
-   background-color: lightblue;
+   font-weight: bold;
+   background-color: firebrick;
    list-style: none;
    justify-content: space-around;
    align-items: center;

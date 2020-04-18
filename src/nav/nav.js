@@ -6,8 +6,8 @@ function Nav() {
   return (
     <nav> 
       <h3> Meal Mapper</h3>
-      <Link to='/'> Home</Link>
       <ul className='nav-links'> 
+      <Link to='/'> Home</Link>
       <Link to='/mealsPlan'> Meals Plan</Link>
       <Link to='/shoppingList'> Shopping List</Link>
       </ul>
