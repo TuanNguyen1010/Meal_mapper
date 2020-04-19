@@ -1,11 +1,26 @@
 import React from 'react'
+import { confirmAlert } from 'react-confirm-alert'
 
 
 const Recipe = ({title, calories, image, ingredients}) => {
 
   const saveRecipe = () => {
     // link to express function 
-    console.log('testing ')
+    // console.log('testing ')
+    confirmAlert({
+      title: 'Save this recipe to this date',
+      message: 'Are you sure to do this.',
+      buttons: [
+        {
+          label: 'Yes',
+          onClick: () => alert('Click Yes')
+        },
+        {
+          label: 'No',
+          onClick: () => alert('Click No')
+        }
+      ]
+    });
   }
 
   return(

@@ -1,5 +1,6 @@
 import React, {Component }  from 'react';
 import './App.css';
+import 'react-confirm-alert/src/react-confirm-alert.css'
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Home from './pages/homePage'
 import Date from './pages/SelectedDate'
