@@ -11,11 +11,8 @@ class Calender extends Component {
     this.state ={
       dateToday: '2020-04-16',
       datePickerInputDate: null,
-      // datePickerInputDate2: null,
-      // showInput: true,
       redirect: false
     }
-    this.onChange = this.onChange.bind(this)
   }
   onChange = async ( dateString, e) => {
     const fullDateString = '' + dateString
@@ -24,10 +21,8 @@ class Calender extends Component {
     const Year = fullDateString[11] + fullDateString[12] + fullDateString[13] + fullDateString[14]
     const fullDate = date + '-' + month + '-' + Year
     await this.setState({ datePickerInputDate: fullDate })
-    console.log(this.state.datePickerInputDate)
+    this.props.datePicked(fullDate)
     this.setRedirect()
-    console.log(this.state.redirect)
-    // this.props.datePicked(fullDate)
   }
 
   setRedirect = () => {

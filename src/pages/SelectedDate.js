@@ -24,6 +24,8 @@ class Date extends Component {
   getSearch = (e) => {
     e.preventDefault()
     this.grabRecipe()
+    console.log(this.props.selectedDate)
+    console.log('happy')
   }
 
   loadRecipe = () => {
@@ -35,6 +37,7 @@ class Date extends Component {
         calories={recipe.recipe.calories} 
         image={recipe.recipe.image}
         ingredients={recipe.recipe.ingredientLines.map(ingre => ( ingre ))}
+        selectedDate ={this.props.selectedDate}
       />
       ))
   }
