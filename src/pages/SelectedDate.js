@@ -18,7 +18,7 @@ class Date extends Component {
     const response = await fetch(`https://api.edamam.com/search?q=${this.state.searchData}&app_id=${APP_ID}&app_key=${API_KEY}`).then(response => response.json())
     this.setState({recipes: response.hits})
     this.setState({avail: true})
-    console.log('hello', this.state.recipes)
+    console.log( this.state.recipes)
   }
 
   getSearch = (e) => {
@@ -51,7 +51,6 @@ class Date extends Component {
         type ="text" 
         onChange={async (e) => {
           await this.setState({searchData: e.target.value})
-          console.log(this.state.searchData)
         }}
       />
       <button
