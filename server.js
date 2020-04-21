@@ -3,9 +3,14 @@ const mongoose = require('mongoose')
 const app = express()
 require('dotenv').config()
 
+//import routes
+const recipesRoutes = require('./routes/recipe')
+
 //middleware
 app.use(express.json())
 
+//routes 
+app.use("/recipe", recipesRoutes)
 app.get('/', (req, res) => {
   res.json("Hello World")
 })
