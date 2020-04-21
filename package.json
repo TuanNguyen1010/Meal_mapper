@@ -22,6 +22,10 @@
     "mongoose": "^5.9.10"
   },
   "jest": {
-    "testEnvironment": "node"
+    "testEnvironment": "node",
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/client/"
+    ]
   }
 }
