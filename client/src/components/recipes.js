@@ -31,7 +31,7 @@ class Recipe extends Component {
         <div className='calories-container'>
         <h2 className='calories'> Calories: {this.props.calories}</h2>
     </div>
-    <h2 className='ingredients'> Ingredients : {this.props.ingredients} </h2>
+    <h2 className='ingredients' onClick={() => console.log(typeof [])} > Ingredients : {this.props.ingredients} </h2>
     <img className='image' src={this.props.image} alt="" onClick={() => {this.saveRecipe()}} /> 
   </div>
   </div>
