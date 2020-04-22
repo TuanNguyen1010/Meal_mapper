@@ -1,6 +1,10 @@
 const mongoose = require('mongoose')
 
 const recipeSchema = new mongoose.Schema({
+  date:{
+    type: String,
+    require: true
+  },
   title: {
     type: String,
     require: true, 

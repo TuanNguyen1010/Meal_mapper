@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose')
 const app = express()
+const cors = require('cors')
 require('dotenv').config()
 
 //import routes
@@ -8,6 +9,7 @@ const recipesRoutes = require('./routes/recipe')
 
 //middleware
 app.use(express.json())
+app.use(cors())
 
 //routes 
 app.use("/recipe", recipesRoutes)

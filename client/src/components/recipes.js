@@ -1,10 +1,19 @@
 import React, { Component } from 'react'
 import { confirmAlert } from 'react-confirm-alert'
+import axios from 'axios'
 
 
 class Recipe extends Component {
 
   saveRecipe = (props) => {
+    const recipeData = {
+      "date": this.props.selectedDate,
+      "title": this.props.title,
+      "calories": this.props.calories,
+      "ingredients": this.props.ingredients,
+      "image": this.props.image
+    
+    }
     // link to express function 
     confirmAlert({
       title: `Save this ${this.props.title} recipe to this ${this.props.selectedDate}`,
@@ -12,7 +21,10 @@ class Recipe extends Component {
       buttons: [
         {
           label: 'Yes',
-          onClick: () => console.log('clicked Yes')
+          onClick: async () => {
+            await  axios.post('http://localhost:8000/recipe/add', recipeData)
+            console.log('clicked Yes')
+          }
         },
         {
           label: 'No',
