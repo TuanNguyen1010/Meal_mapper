@@ -5,7 +5,7 @@ const cors = require('cors')
 require('dotenv').config()
 
 //import routes
-const recipesRoutes = require('./routes/recipe')
+const recipesRoutes = require('./routes/recipeRoute')
 
 //middleware
 app.use(express.json())

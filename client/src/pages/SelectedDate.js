@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import Recipe from '../components/recipes'
+import axios from 'axios'
 
 class Date extends Component {
     constructor(props){
@@ -26,7 +27,13 @@ class Date extends Component {
     this.grabRecipe()
     console.log(this.props.selectedDate)
     console.log('happy')
+    this.searchDB()
   }
+
+  searchDB = async (e) => {
+    await axios.get('http://localhost:8000/recipe/findByDate/' + this.props.selectedDate,)
+    .then (res =>  console.log(res.data))
+  } 
 
   loadRecipe = () => {
     if (this.state.avail)
