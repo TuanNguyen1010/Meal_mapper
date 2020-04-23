@@ -14,9 +14,9 @@ app.use(cors())
 
 //routes 
 app.use("/recipe", recipesRoutes)
-app.get('/', (req, res) => {
-  res.json("Hello World")
-})
+// app.get('/', (req, res) => {
+//   res.json("Hello World")
+// })
 
 //connect to cloud db
 mongoose.connect(
