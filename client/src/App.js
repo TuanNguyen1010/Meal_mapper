@@ -3,7 +3,7 @@ import './App.css';
 import 'react-confirm-alert/src/react-confirm-alert.css'
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Home from './pages/homePage'
-import SelectedDate from './pages/SelectedDate'
+import SelectedDatePage from './pages/selectedDatePage'
 import Nav from './nav/nav'
 
 class App extends Component{
@@ -23,7 +23,7 @@ class App extends Component{
   }
 
   dateComponent = () => {
-    return <SelectedDate selectedDate={this.state.selectedDate}/>
+    return <SelectedDatePage selectedDate={this.state.selectedDate}/>
   }
 
   render() {

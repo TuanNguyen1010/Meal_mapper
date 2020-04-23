@@ -35,10 +35,11 @@ class RecipeSearcher extends Component {
       <Recipe 
         key={key}
         title={recipe.recipe.label} 
-        calories={recipe.recipe.calories} 
+        calories={recipe.recipe.calories.toFixed(0)} 
         image={recipe.recipe.image}
         ingredients={recipe.recipe.ingredientLines.map(ingre => ( ingre ))}
         selectedDate ={this.props.selectedDate}
+        changeExistingRecipeState={this.props.changeExistingRecipeState}
       />
       ))
   }

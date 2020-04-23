@@ -18,15 +18,22 @@ class Date extends Component {
         savedRecipeImage: ''
       }
     }
+    componentDidUpdate() {
+      this.searchDB()
+    }
+
+    changeExistingRecipeState = () => {
+      this.setState({existingRecipe: true})
+    }
 
     searchDB = async () => {
       await axios.get('http://localhost:8000/recipe/findByDate/' + this.props.selectedDate,)
       .then (res => {
         if (res.data){
-        this.setState({existingRecipe: true})
+        this.changeExistingRecipeState()
         this.setState({savedRecipeTitle: res.data.title})
         this.setState({savedRecipeIngredients: res.data.ingredients})
-        this.setState({savedRecipeCalories: res.data.calories})
+        this.setState({savedRecipeCalories: res.data.calories.toFixed(0)})
         this.setState({savedRecipeImage: res.data.image})
         }
       })
@@ -37,7 +44,7 @@ class Date extends Component {
     <div> 
       Saved recipe for {this.props.selectedDate}
       <h1>{this.state.savedRecipeTitle } </h1>
-      <h3> {this.state.savedRecipeCalories}</h3>
+      <h3> Calories: {this.state.savedRecipeCalories}</h3>
       <img src={this.state.savedRecipeImage} alt=""/> 
       <h3> {this.state.savedRecipeIngredients.map((ingredients)=> (
         <div> {ingredients}</div>
@@ -45,7 +52,7 @@ class Date extends Component {
     
     </div>
     ) : (
-      <RecipeSearcher selectedDate ={this.props.selectedDate}/>
+      <RecipeSearcher selectedDate ={this.props.selectedDate} changeExistingRecipeState={this.changeExistingRecipeState}/>
     )
     return(
       <div> 
