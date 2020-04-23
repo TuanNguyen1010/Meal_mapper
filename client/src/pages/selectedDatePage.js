@@ -18,11 +18,9 @@ class Date extends Component {
         savedRecipeImage: ''
       }
     }
-    componentDidUpdate() {
-      this.searchDB()
-    }
 
     changeExistingRecipeState = () => {
+      this.searchDB()
       this.setState({existingRecipe: true})
     }
 
