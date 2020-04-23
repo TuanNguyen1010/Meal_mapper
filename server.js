@@ -23,8 +23,9 @@ app.listen(port, () => {
   console.log(`server is runing on port ${port}`)
 })
 
+//connect to cloud db
 mongoose.connect(
-  process.env.LOCAL_DATABASE,
+  process.env.MONGODB_URL,
   {useNewUrlParser: true, 
   useCreateIndex: true
   }
