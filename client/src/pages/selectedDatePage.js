@@ -25,7 +25,7 @@ class Date extends Component {
     }
 
     searchDB = async () => {
-      await axios.get('http://localhost:8000/api/' + this.props.selectedDate,)
+      await axios.get('/api/' + this.props.selectedDate,)
       .then (res => {
         if (res.data){
         this.changeExistingRecipeState()

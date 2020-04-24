@@ -22,7 +22,7 @@ class Recipe extends Component {
         {
           label: 'Yes',
           onClick: async () => {
-            await  axios.post('http://localhost:8000/api/', recipeData)
+            await  axios.post('/api/', recipeData)
             this.props.changeExistingRecipeState()
             console.log('clicked Yes')
           }
