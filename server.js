@@ -13,7 +13,7 @@ app.use(express.json())
 app.use(cors())
 
 //routes 
-app.use("/recipe", recipesRoutes)
+app.use("/api", recipesRoutes)
 // app.get('/', (req, res) => {
 //   res.json("Hello World")
 // })
