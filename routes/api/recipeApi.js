@@ -14,7 +14,7 @@ exports.findByDate = async (req, res, next) => {
   try{
     const findDate = await recipeModel.findOne({date: req.params.date})
     res.status(200).json(findDate)
-  } catch(err) {
+  } catch(err) { 
     next(err)
   }
 }

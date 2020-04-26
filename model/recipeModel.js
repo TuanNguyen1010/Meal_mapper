@@ -5,20 +5,15 @@ const recipeSchema = new mongoose.Schema({
     type: String,
     require: true
   },
-  title: {
-    type: String,
+  recipe_one: {
+    type: Object,
     require: true, 
   },
-  calories: {
-    type: Number,
-    require: true
+  recipe_two: {
+    type: Object
   },
-  ingredients: {
-    type: Array, 
-    require: true
-  },
-  image: {
-    type: String,
+  recipe_three: {
+    type: Object,
   }
 })
 

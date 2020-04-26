@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import Recipe from '../components/recipes'
+import Recipe from './recipesSearchResult'
 
 class RecipeSearcher extends Component {
   constructor(props){

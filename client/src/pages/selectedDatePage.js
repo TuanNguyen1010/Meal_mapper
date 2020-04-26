@@ -28,11 +28,12 @@ class Date extends Component {
       await axios.get('/api/' + this.props.selectedDate,)
       .then (res => {
         if (res.data){
-        this.changeExistingRecipeState()
-        this.setState({savedRecipeTitle: res.data.title})
-        this.setState({savedRecipeIngredients: res.data.ingredients})
-        this.setState({savedRecipeCalories: res.data.calories.toFixed(0)})
-        this.setState({savedRecipeImage: res.data.image})
+          console.log("res ingredents",res.data.recipe_one.image)
+        this.setState({existingRecipe: true})
+        this.setState({savedRecipeTitle: res.data.recipe_one.title})
+        this.setState({savedRecipeIngredients: res.data.recipe_one.ingredients})
+        this.setState({savedRecipeCalories: res.data.recipe_one.calories})
+        this.setState({savedRecipeImage: res.data.recipe_one.image})
         }
       })
     }

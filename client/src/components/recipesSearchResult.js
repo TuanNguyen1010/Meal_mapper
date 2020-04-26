@@ -8,11 +8,11 @@ class Recipe extends Component {
   saveRecipe = (props) => {
     const recipeData = {
       "date": this.props.selectedDate,
-      "title": this.props.title,
-      "calories": this.props.calories,
-      "ingredients": this.props.ingredients,
-      "image": this.props.image
-    
+      "recipe_one": 
+        {"title": this.props.title,
+        "calories": this.props.calories,
+        "ingredients": this.props.ingredients,
+        "image": this.props.image}
     }
     // link to express function 
     confirmAlert({
