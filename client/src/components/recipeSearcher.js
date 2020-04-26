@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import Recipe from './recipesSearchResult'
+import RecipeResult from './recipesSearchResult'
 
 class RecipeSearcher extends Component {
   constructor(props){
@@ -32,7 +32,7 @@ class RecipeSearcher extends Component {
   loadRecipe = () => {
     if (this.state.avail)
     return this.state.recipes.map((recipe, key) => (
-      <Recipe 
+      <RecipeResult 
         key={key}
         title={recipe.recipe.label} 
         calories={recipe.recipe.calories.toFixed(0)} 
@@ -46,7 +46,6 @@ class RecipeSearcher extends Component {
   render() {
     return (
       <div> 
-      <h1>Search for a recipe</h1>
       <form 
           onSubmit={this.getSearch}
           className="search-form"

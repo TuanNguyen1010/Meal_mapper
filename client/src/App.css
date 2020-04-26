@@ -86,11 +86,15 @@ nav{
 }
 
 .ingredients {
-    background-color: #6c757d;
+  background-color: #6c757d;
   margin-right: 25px;
   justify-content: space-between;
   display: flex;
   flex-direction: column; 
   width: 60%;
   padding: 25px;
+}
+
+.more_search {
+  padding-top: 40px;
 }

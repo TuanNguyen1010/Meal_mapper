@@ -48,10 +48,15 @@ class Date extends Component {
       <h3> {this.state.savedRecipeIngredients.map((ingredients)=> (
         <div> {ingredients}</div>
       ))}</h3>
-    
+
+      <h3 className='more_search'>Search for another recipe to cook on {this.props.selectedDate}</h3>
+      <RecipeSearcher selectedDate ={this.props.selectedDate} changeExistingRecipeState={this.changeExistingRecipeState}/>
     </div>
     ) : (
+      <div>
+      <h1>Search for a recipe</h1>
       <RecipeSearcher selectedDate ={this.props.selectedDate} changeExistingRecipeState={this.changeExistingRecipeState}/>
+      </div>
     )
     return(
       <div> 
