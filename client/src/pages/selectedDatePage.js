@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import RecipeSearcher from '../components/recipeSearcher'
 import axios from 'axios'
+import ExistingRecipe from '../components/existingRecipe'
 
 class Date extends Component {
     constructor(props){
@@ -28,7 +29,7 @@ class Date extends Component {
       await axios.get('/api/' + this.props.selectedDate,)
       .then (res => {
         if (res.data){
-          console.log("res ingredents",res.data.recipe_one.image)
+          // console.log("res ingredents",res.data.recipe_one.image)
         this.setState({existingRecipe: true})
         this.setState({savedRecipeTitle: res.data.recipe_one.title})
         this.setState({savedRecipeIngredients: res.data.recipe_one.ingredients})
@@ -41,13 +42,14 @@ class Date extends Component {
   render() {
     const contents = this.state.existingRecipe ? (
     <div> 
-      Saved recipe for {this.props.selectedDate}
+      {/* Saved recipe for {this.props.selectedDate}
       <h1>{this.state.savedRecipeTitle } </h1>
       <h3> Calories: {this.state.savedRecipeCalories}</h3>
       <img src={this.state.savedRecipeImage} alt=""/> 
       <h3> {this.state.savedRecipeIngredients.map((ingredients)=> (
         <div> {ingredients}</div>
-      ))}</h3>
+      ))}</h3> */}
+      < ExistingRecipe selectedDate ={this.props.selectedDate} savedRecipeTitle={this.state.savedRecipeTitle} savedRecipeCalories={this.state.savedRecipeCalories} savedRecipeImage={this.state.savedRecipeImage} savedRecipeIngredients={this.state.savedRecipeIngredients}/> 
 
       <h3 className='more_search'>Search for another recipe to cook on {this.props.selectedDate}</h3>
       <RecipeSearcher selectedDate ={this.props.selectedDate} changeExistingRecipeState={this.changeExistingRecipeState}/>
