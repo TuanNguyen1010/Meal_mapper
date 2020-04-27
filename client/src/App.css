@@ -59,46 +59,50 @@ nav{
    width: 40%;
  }
  
-.recipe-component, .recipe-container {
+.recipe-search-result-component, .recipe-search-result-container {
   display: flex;
 }
 
-.recipe-component {
+.recipe-search-result-component {
   justify-content: center;
   padding: 10px;
   
 }
 
-.recipe-container {
+.recipe-search-result-container {
   background-color: rgb(235,235,235, 0.8);
   
   
 }
 
-.title-container {
+.recipe-search-result-title {
   font-size: 30px;
   margin-left: 90px;
   justify-content: center;
 }
 
-.image {
-  justify-content: left;
+.recipe-search-result-image {
+  /* justify-content: left;
   width: 20%;
   margin-left: 90px;
-  margin-bottom: 10px;
+  margin-bottom: 10px; */
+  padding: 25px;
+  /* margin: 50px; */
 }
 
-.calories {
+.recipe-search-result-calories {
+
 }
 
-.ingredients {
+.recipe-search-result-ingredients {
   background-color: #6c757d;
-  margin-right: 25px;
+  padding: 25px;
+  /* margin-right: 25px;
   justify-content: space-between;
   display: flex;
   flex-direction: column; 
   width: 60%;
-  padding: 25px;
+  padding: 25px; */
 }
 
 .more_search {

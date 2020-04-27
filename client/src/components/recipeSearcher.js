@@ -17,7 +17,6 @@ class RecipeSearcher extends Component {
     const response = await fetch(`https://api.edamam.com/search?q=${this.state.searchData}&app_id=${APP_ID}&app_key=${API_KEY}`).then(response => response.json())
     this.setState({recipes: response.hits})
     this.setState({avail: true})
-    // this.props.setRecipe(response)
     console.log( this.state.recipes)
   }
 
@@ -26,7 +25,6 @@ class RecipeSearcher extends Component {
     this.grabRecipe()
     console.log(this.props.selectedDate)
     console.log('happy')
-    // this.searchDB()
   }
 
   loadRecipe = () => {

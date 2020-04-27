@@ -5,12 +5,6 @@ import axios from 'axios'
 
 class RecipeSearchResult extends Component {
 
-  // saveToDB = async (recipeData) => {
-  //   await  axios.post('/api/', recipeData)
-  //   this.props.changeExistingRecipeState()
-  //   console.log('clicked Yes')
-  // }
-
   saveRecipe = (recipeNumber) => {
     const recipeDataOne = {
       "date": this.props.selectedDate,
@@ -60,18 +54,18 @@ class RecipeSearchResult extends Component {
 
   render() {
   return(
-  <div className='recipe-component'> 
-    <div className='recipe-container' onClick={() => {this.saveRecipe()}}>
-      <div className='title-container'>
+  <div className='recipe-search-result-component'> 
+    <div className='recipe-search-result-container' onClick={() => {this.saveRecipe()}}>
+      <div className='recipe-search-result-title'>
       <h1> {this.props.title} </h1>
       </div>
-        <div className='calories-container'>
-        <h2 className='calories'> Calories: {this.props.calories}</h2>
+        <div className='recipe-search-result-calories-container'>
+        <h2 className='recipe-search-result-calories'> Calories: {this.props.calories}</h2>
     </div>
-    <h2 className='ingredients' onClick={() => console.log(typeof [])} > Ingredients : {this.props.ingredients.map((ingredient) => 
+    <h2 className='recipe-search-result-ingredients' onClick={() => console.log(typeof [])} > Ingredients : {this.props.ingredients.map((ingredient) => 
     <div> {ingredient.text} </div>
     )} </h2>
-    <img className='image' src={this.props.image} alt="" onClick={() => {this.saveRecipe()}} /> 
+    <img className='recipe-search-result-image' src={this.props.image} alt="" onClick={() => {this.saveRecipe()}} /> 
   </div>
   </div>
   )
