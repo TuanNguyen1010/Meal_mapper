@@ -17,7 +17,7 @@ class ExistingRecipe extends Component {
       <h3> Calories: {this.props.savedRecipeCalories}</h3>
       <img src={this.props.savedRecipeImage} alt=""/> 
       <h3> {this.props.savedRecipeIngredients.map((ingredients)=> (
-        <div> {ingredients}</div>
+        <div> {ingredients.text}</div>
       ))}</h3>
       </div>
     )

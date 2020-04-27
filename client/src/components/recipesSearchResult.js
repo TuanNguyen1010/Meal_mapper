@@ -61,14 +61,16 @@ class RecipeSearchResult extends Component {
   render() {
   return(
   <div className='recipe-component'> 
-    <div className='recipe-container'>
-      <div className='title-container' onClick={() => {this.saveRecipe()}}>
+    <div className='recipe-container' onClick={() => {this.saveRecipe()}}>
+      <div className='title-container'>
       <h1> {this.props.title} </h1>
       </div>
         <div className='calories-container'>
         <h2 className='calories'> Calories: {this.props.calories}</h2>
     </div>
-    <h2 className='ingredients' onClick={() => console.log(typeof [])} > Ingredients : {this.props.ingredients} </h2>
+    <h2 className='ingredients' onClick={() => console.log(typeof [])} > Ingredients : {this.props.ingredients.map((ingredient) => 
+    <div> {ingredient.text} </div>
+    )} </h2>
     <img className='image' src={this.props.image} alt="" onClick={() => {this.saveRecipe()}} /> 
   </div>
   </div>

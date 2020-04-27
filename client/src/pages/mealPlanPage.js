@@ -27,6 +27,7 @@ class MealPlanPage extends Component {
   render() {
     return (
       <div> 
+        <h1> Saved Meal Plans </h1>
         {this.state.AllRecipe.map((recipe, key) => (
         <MealPlanRecipe
         key={key}

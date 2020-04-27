@@ -1,3 +1,5 @@
+* { border: 1ps solid red}
+
 .App {
   text-align: center;
 }
@@ -64,10 +66,13 @@ nav{
 .recipe-component {
   justify-content: center;
   padding: 10px;
+  
 }
 
 .recipe-container {
   background-color: rgb(235,235,235, 0.8);
+  
+  
 }
 
 .title-container {
@@ -100,7 +105,13 @@ nav{
   padding-top: 40px;
 }
 .mealPlanRecipeComponent {
-  background-color: grey;
+  background-color: green;
+}
+
+.mealPlanRecipeContainer {
+  background-color: honeydew;
+  display: flex;
+  border: 60px;
 }
 
 .mealPlanRecipeDate{
@@ -111,19 +122,15 @@ margin-bottom: 10px;
 }
 
 .mealPlanRecipeTitle, .mealPlanRecipeImage {
-position: relative;
-bottom: 40px;
-right: 240px;
+ display: flex;
 }
 
 .mealPlanRecipeImage {
 width: 140px;
 height: 140px;
-
+padding-left: 60px;
 }
 
 .mealPlanRecipeIngredient {
-  position: relative;
-  bottom: 240px;
-  left: 300px;
+margin-left: 60px;
 }
