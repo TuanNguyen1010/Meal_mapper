@@ -11,8 +11,8 @@ class MealPlanRecipe extends Component{
           <h3 className='mealPlanRecipeTitle'>title: {this.props.title}</h3>
           <img className='mealPlanRecipeImage' src={this.props.image} alt="" /> 
           </div>
-          <h3 className='mealPlanRecipeIngredient'> ingredients: {this.props.ingredients.map((ingredients) => (
-            <div>{ingredients.text}</div>
+          <h3 className='mealPlanRecipeIngredient'> ingredients: {this.props.ingredients.map((ingredients, key) => (
+            <div key={key}>{ingredients.text}</div>
           )
           )}</h3>
         </div>

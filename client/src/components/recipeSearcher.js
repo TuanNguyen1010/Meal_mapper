@@ -29,6 +29,7 @@ class RecipeSearcher extends Component {
 
   loadRecipe = () => {
     if (this.state.avail)
+{    console.log('logging state',this.state.recipes)
     return this.state.recipes.map((recipe, key) => (
       <RecipeResult 
         key={key}
@@ -39,7 +40,7 @@ class RecipeSearcher extends Component {
         selectedDate ={this.props.selectedDate}
         changeExistingRecipeState={this.props.changeExistingRecipeState}
       />
-      ))
+      ))}
   }
   render() {
     return (
