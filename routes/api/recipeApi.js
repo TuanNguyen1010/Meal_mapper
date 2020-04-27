@@ -9,6 +9,15 @@ exports.saveRecipe = async (req, res, next) => {
   }
 }
 
+exports.find = async (req, res, next) => {
+  try{
+    const findAll = await recipeModel.find({})
+    res.json(findAll)
+  } catch(err){
+    next(err)
+  }
+}
+
 exports.findByDate = async (req, res, next) => {
   try{
     const findDate = await recipeModel.findOne({date: req.params.date})

@@ -4,6 +4,7 @@ import 'react-confirm-alert/src/react-confirm-alert.css'
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Home from './pages/homePage'
 import SelectedDatePage from './pages/selectedDatePage'
+import MealPlanPage from './pages/mealPlanPage'
 import Nav from './nav/nav'
 
 class App extends Component{
@@ -32,6 +33,7 @@ class App extends Component{
     <div className="App">
       <Nav> </Nav>
       <Route path='/' exact component={this.homeComponent}></Route>
+      <Route path='/mealsPlan' component={MealPlanPage}/> 
       <Route path='/date/:dateId' component={this.dateComponent}></Route>
     </div>
     </Router>

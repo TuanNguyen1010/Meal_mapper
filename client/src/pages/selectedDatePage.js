@@ -7,7 +7,7 @@ import { Redirect } from 'react-router-dom'
 class Date extends Component {
     constructor(props){
       super(props)
-      this.searchDB()
+      this.searchDateOnDB()
       this.state = {
         searchData: null,
         query: "chicken",
@@ -29,11 +29,11 @@ class Date extends Component {
     }}
 
     changeExistingRecipeState = async () => {
-      await this.searchDB()
+      await this.searchDateOnDB()
       this.setState({existingRecipe: true})
     }
 
-    searchDB = async () => {
+    searchDateOnDB = async () => {
       await axios.get('/api/' + this.props.selectedDate,)
       .then (res => {
         if (res.data){
@@ -59,7 +59,6 @@ class Date extends Component {
     }
 
     renderRedirectToHome = (load) => {
-      console.log('man this is painful')
       if (this.props.selectedDate === '2020-04-16') {
         return <Redirect to={'/'}  />
       } else {

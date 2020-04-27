@@ -82,6 +82,7 @@ nav{
   margin-left: 90px;
   margin-bottom: 10px;
 }
+
 .calories {
 }
 
@@ -97,4 +98,32 @@ nav{
 
 .more_search {
   padding-top: 40px;
+}
+.mealPlanRecipeComponent {
+  background-color: grey;
+}
+
+.mealPlanRecipeDate{
+justify-content: left;
+width: 20%;
+margin-left: 90px;
+margin-bottom: 10px;
+}
+
+.mealPlanRecipeTitle, .mealPlanRecipeImage {
+position: relative;
+bottom: 40px;
+right: 240px;
+}
+
+.mealPlanRecipeImage {
+width: 140px;
+height: 140px;
+
+}
+
+.mealPlanRecipeIngredient {
+  position: relative;
+  bottom: 240px;
+  left: 300px;
 }
