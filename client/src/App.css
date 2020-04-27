@@ -59,6 +59,10 @@ nav{
    width: 40%;
  }
  
+.MealPlanPage {
+  background-color: orange;
+}
+ 
 .recipe-search-result-component, .recipe-search-result-container {
   display: flex;
 }
@@ -71,8 +75,20 @@ nav{
 
 .recipe-search-result-container {
   background-color: rgb(235,235,235, 0.8);
+  border-radius: 30px;
+  margin: 50px;
   
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  transition: .5s ease; 
   
+}
+
+.recipe-search-result-container:hover {
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+}
+
+.recipe-search-result-container:hover > *{
+  opacity: 0.4;
 }
 
 .recipe-search-result-title {
@@ -82,12 +98,7 @@ nav{
 }
 
 .recipe-search-result-image {
-  /* justify-content: left;
-  width: 20%;
-  margin-left: 90px;
-  margin-bottom: 10px; */
   padding: 25px;
-  /* margin: 50px; */
 }
 
 .recipe-search-result-calories {
@@ -97,26 +108,38 @@ nav{
 .recipe-search-result-ingredients {
   background-color: #6c757d;
   padding: 25px;
-  /* margin-right: 25px;
-  justify-content: space-between;
-  display: flex;
-  flex-direction: column; 
-  width: 60%;
-  padding: 25px; */
 }
 
 .more_search {
   padding-top: 40px;
 }
 .mealPlanRecipeComponent {
-  background-color: green;
 }
 
 .mealPlanRecipeContainer {
   background-color: honeydew;
+  flex-wrap: wrap;
+  flex-basis: 20%;
   display: flex;
   border: 60px;
+  border-radius: 30px;
+  margin: 50px;
+  
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  transition: .5s ease; 
 }
+
+.mealPlanRecipeContainer:hover {
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+}
+
+/* .mealPlanRecipeContainer:hover > *{
+  opacity: 0.4;
+} */
+
+/* .mealPlanRecipeContainer:hover > *:hover{
+  opacity: 1;
+} */
 
 .mealPlanRecipeDate{
 justify-content: left;
