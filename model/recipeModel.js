@@ -3,11 +3,11 @@ const mongoose = require('mongoose')
 const recipeSchema = new mongoose.Schema({
   date:{
     type: String,
-    require: true
+    required: true
   },
   recipe_one: {
     type: Object,
-    require: true, 
+    required: true, 
   },
   recipe_two: {
     type: Object

@@ -3,10 +3,16 @@ import { confirmAlert } from 'react-confirm-alert'
 import axios from 'axios'
 
 
-class Recipe extends Component {
+class RecipeSearchResult extends Component {
 
-  saveRecipe = (props) => {
-    const recipeData = {
+  // saveToDB = async (recipeData) => {
+  //   await  axios.post('/api/', recipeData)
+  //   this.props.changeExistingRecipeState()
+  //   console.log('clicked Yes')
+  // }
+
+  saveRecipe = (recipeNumber) => {
+    const recipeDataOne = {
       "date": this.props.selectedDate,
       "recipe_one": 
         {"title": this.props.title,
@@ -14,7 +20,15 @@ class Recipe extends Component {
         "ingredients": this.props.ingredients,
         "image": this.props.image}
     }
-    // link to express function 
+    const recipeDataTwo = {
+      "date": this.props.selectedDate,
+      "recipe_two": 
+        {"title": this.props.title,
+        "calories": this.props.calories,
+        "ingredients": this.props.ingredients,
+        "image": this.props.image}
+    }
+
     confirmAlert({
       title: `Save this ${this.props.title} recipe to this ${this.props.selectedDate}`,
       message: 'Are you sure to do this.',
@@ -22,11 +36,18 @@ class Recipe extends Component {
         {
           label: 'Yes',
           onClick: async () => {
-            await  axios.post('/api/', recipeData)
+            // this.saveToDB()
+            await axios.get('/api/' + this.props.selectedDate)
+            .then(res =>{
+              if (res.data){
+              axios.put('/api/', recipeDataTwo)
+            } else {
+            axios.post('/api/', recipeDataOne)
             this.props.changeExistingRecipeState()
-            console.log('clicked Yes')
-          }
-        },
+            console.log('clicked Yes', res)
+            }
+            })
+        }},
         {
           label: 'No',
           onClick: () => alert('Click No')
@@ -34,6 +55,9 @@ class Recipe extends Component {
       ]
     });
   }
+
+  
+
   render() {
   return(
   <div className='recipe-component'> 
@@ -52,4 +76,4 @@ class Recipe extends Component {
 }
 }
 
-export default Recipe;
+export default RecipeSearchResult;
