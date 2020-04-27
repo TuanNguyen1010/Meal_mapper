@@ -14,7 +14,6 @@ class ExistingRecipe extends Component {
     return (
       <div>
         {this.logging(this.props.savedRecipeCalories)}
-      Saved recipe for {this.props.selectedDate}
       <h1>{this.props.savedRecipeTitle } </h1>
       <h3> Calories: {this.props.savedRecipeCalories}</h3>
       <img src={this.props.savedRecipeImage} alt=""/> 
