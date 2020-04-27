@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import Calender from '../components/calender'
-import { render } from 'enzyme'
 
 class HomePage extends Component {
   constructor(props){

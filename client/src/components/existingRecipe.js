@@ -1,15 +1,7 @@
 import React, {Component} from 'react'
 
 class ExistingRecipe extends Component {
-  constructor(props){
-    super(props)
-  }
-
-  logging = (hello) => {
-    console.log(hello)
-  }
   render() {
-
 
     return (
       <div>
