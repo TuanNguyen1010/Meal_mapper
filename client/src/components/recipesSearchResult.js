@@ -35,6 +35,7 @@ class RecipeSearchResult extends Component {
             .then(res =>{
               if (res.data){
               axios.put('/api/', recipeDataTwo)
+              this.props.changeExistingRecipeState()
             } else {
             axios.post('/api/', recipeDataOne)
             this.props.changeExistingRecipeState()
