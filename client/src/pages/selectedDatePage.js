@@ -38,11 +38,12 @@ class Date extends Component {
       .then (res => {
         if (res.data){
           this.setState({existingRecipe: true})
+          console.log(res.data)
           this.setState({recipe_one: {
-            savedRecipeTitle: res.data.recipe_one.title,
-            savedRecipeIngredients: res.data.recipe_one.ingredients,
-            savedRecipeCalories: res.data.recipe_one.calories,
-            savedRecipeImage: res.data.recipe_one.image
+            savedRecipeTitle: res.data.recipe[0].title,
+            savedRecipeIngredients: res.data.recipe[0].ingredients,
+            savedRecipeCalories: res.data.recipe[0].calories,
+            savedRecipeImage: res.data.recipe[0].image
             }
           })
         }
