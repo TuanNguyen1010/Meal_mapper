@@ -108,6 +108,7 @@ nav{
 .recipe-search-result-ingredients {
   background-color: #6c757d;
   padding: 25px;
+  font-size: small;
 }
 
 .more_search {

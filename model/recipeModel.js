@@ -5,15 +5,9 @@ const recipeSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  recipe_one: {
-    type: Object,
+  recipe: {
+    type: Array,
     required: true, 
-  },
-  recipe_two: {
-    type: Object
-  },
-  recipe_three: {
-    type: Object,
   }
 })
 

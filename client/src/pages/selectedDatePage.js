@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import RecipeSearcher from '../components/recipeSearcher'
+import RecipeSearchBox from '../components/recipeSearchBox'
 import axios from 'axios'
 import ExistingRecipe from '../components/existingRecipe'
 import { Redirect } from 'react-router-dom'
@@ -73,12 +73,12 @@ class Date extends Component {
       < ExistingRecipe selectedDate ={this.props.selectedDate} savedRecipeTitle={this.state.recipe_one.savedRecipeTitle} savedRecipeCalories={this.state.recipe_one.savedRecipeCalories} savedRecipeImage={this.state.recipe_one.savedRecipeImage} savedRecipeIngredients={this.state.recipe_one.savedRecipeIngredients}/>
       < ExistingRecipe selectedDate ={this.props.selectedDate} savedRecipeTitle={this.state.recipe_two.savedRecipeTitle} savedRecipeCalories={this.state.recipe_two.savedRecipeCalories} savedRecipeImage={this.state.recipe_two.savedRecipeImage} savedRecipeIngredients={this.state.recipe_two.savedRecipeIngredients}/>  
       <h3 className='more_search'>Search for another recipe to cook on {this.props.selectedDate}</h3>
-      <RecipeSearcher selectedDate ={this.props.selectedDate} changeExistingRecipeState={this.changeExistingRecipeState}/>
+      <RecipeSearchBox selectedDate ={this.props.selectedDate} changeExistingRecipeState={this.changeExistingRecipeState}/>
     </div>
     ) : (
       <div>
       <h1>Search for a recipe</h1>
-      <RecipeSearcher selectedDate ={this.props.selectedDate} changeExistingRecipeState={this.changeExistingRecipeState}/>
+      <RecipeSearchBox selectedDate ={this.props.selectedDate} changeExistingRecipeState={this.changeExistingRecipeState}/>
       </div>
     )
     return(

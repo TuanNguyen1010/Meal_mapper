@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import RecipeResult from './recipesSearchResult'
 
-class RecipeSearcher extends Component {
+class RecipeSearchBox extends Component {
   constructor(props){
     super(props)
     this.state = {
@@ -71,4 +71,4 @@ class RecipeSearcher extends Component {
   }
 }
 
-export default RecipeSearcher
+export default RecipeSearchBox

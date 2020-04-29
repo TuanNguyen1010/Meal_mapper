@@ -6,22 +6,22 @@ import axios from 'axios'
 class RecipeSearchResult extends Component {
 
   saveRecipe = (recipeNumber) => {
-    const recipeDataOne = {
+    const recipeData = {
       "date": this.props.selectedDate,
-      "recipe_one": 
+      "recipe": [
         {"title": this.props.title,
         "calories": this.props.calories,
         "ingredients": this.props.ingredients,
-        "image": this.props.image}
+        "image": this.props.image}]
     }
-    const recipeDataTwo = {
-      "date": this.props.selectedDate,
-      "recipe_two": 
-        {"title": this.props.title,
-        "calories": this.props.calories,
-        "ingredients": this.props.ingredients,
-        "image": this.props.image}
-    }
+    // const recipeDataTwo = {
+    //   "date": this.props.selectedDate,
+    //   "recipe_two": 
+    //     {"title": this.props.title,
+    //     "calories": this.props.calories,
+    //     "ingredients": this.props.ingredients,
+    //     "image": this.props.image}
+    // }
 
     confirmAlert({
       title: `Save this ${this.props.title} recipe to this ${this.props.selectedDate}`,
@@ -34,10 +34,10 @@ class RecipeSearchResult extends Component {
             await axios.get('/api/' + this.props.selectedDate)
             .then(res =>{
               if (res.data){
-              axios.put('/api/', recipeDataTwo)
+              axios.put('/api/', recipeData)
               this.props.changeExistingRecipeState()
             } else {
-            axios.post('/api/', recipeDataOne)
+            axios.post('/api/', recipeData)
             this.props.changeExistingRecipeState()
             console.log('clicked Yes', res)
             }

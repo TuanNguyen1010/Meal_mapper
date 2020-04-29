@@ -29,16 +29,16 @@ exports.findByDate = async (req, res, next) => {
 
 exports.AddSecondRecipe = async (req, res, next) => {
   try{
-    const AddSecondRecipe = await recipeModel.findOneAndUpdate(
+    const AddAdditionalRecipe = await recipeModel.findOneAndUpdate(
       {date: req.body.date},
-      {recipe_two: req.body.recipe_two},
+      {$push: {recipe: req.body.recipe}},
       {
         new: true,
         useFindAndModify: false
       }
     )
     if (AddSecondRecipe) {
-      res.json(AddSecondRecipe)}
+      res.json(AddAdditionalRecipe)}
     else {
       res.status(404).send()
     }
