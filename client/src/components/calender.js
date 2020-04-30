@@ -2,7 +2,6 @@ import 'moment/locale/en-gb.js';
 import React, {Component} from 'react'
 import {DatePickerInput } from 'rc-datepicker';
 import 'rc-datepicker/lib/style.css'
-import monthConverter from '../monthConverter.json'
 import { Redirect } from 'react-router-dom'
 
 class Calender extends Component {
@@ -15,13 +14,9 @@ class Calender extends Component {
     }
   }
   onChange = async ( dateString) => {
-    const fullDateString = '' + dateString
-    const date = fullDateString[8] + fullDateString[9]
-    const month = monthConverter.Months[fullDateString[4]+fullDateString[5]+fullDateString[6]]
-    const Year = fullDateString[11] + fullDateString[12] + fullDateString[13] + fullDateString[14]
-    const fullDate = date + '-' + month + '-' + Year
-    await this.setState({ datePickerInputDate: fullDate })
-    this.props.datePicked(fullDate)
+    const dateFormatted = dateString.getDate() + "-0" + (dateString.getMonth() + 1) + "-" + dateString.getFullYear()
+    await this.setState({ datePickerInputDate: dateFormatted })
+    this.props.datePicked(dateFormatted)
     this.setRedirect()
   }
 

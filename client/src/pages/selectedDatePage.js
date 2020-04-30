@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
 import RecipeSearchBox from '../components/recipeSearchBox'
-import axios from 'axios'
 import ExistingRecipe from '../components/existingRecipe'
 import { Redirect } from 'react-router-dom'
 
@@ -8,7 +7,6 @@ class Date extends Component {
     constructor(props){
       super(props)
       this.props.searchAllRecipeForDate()
-      // this.searchDateOnDB()
       this.state = {
         searchData: null,
         query: "chicken",
@@ -22,8 +20,8 @@ class Date extends Component {
       this.setState({existingRecipe: true})
     }
 
-    renderRedirectToHome = (load) => {
-      if (this.props.selectedDate === '2020-04-16') {
+    renderRedirectToHome = () => {
+      if (this.props.selectedDate === '') {
         return <Redirect to={'/'}  />
       } else {
         

@@ -13,9 +13,10 @@ class App extends Component{
   constructor(props){
     super(props)
     this.state ={
-      selectedDate: '2020-04-16',
+      selectedDate: '',
       AllRecipe: [],
-      AllIngredients: []
+      AllIngredients: [],
+      RecipeForDate: null
     }
   }
 
@@ -35,56 +36,47 @@ class App extends Component{
 
   datePicked = async (date) => {
     await this.setState( {selectedDate: date})
-    console.log(this.state.selectedDate)
+    console.log('APP: change date state to: ',this.state.selectedDate)
   }
 
-  homeComponent = () => {
-    return <Home datePicked={this.datePicked}/> 
+  homePage = () => {
+    return <Home datePicked={this.datePicked} selectedDate={this.state.selectedDate}/> 
   }
 
 
-  // searchAllRecipeForDate = () => {
-  //   this.state.AllRecipe.map((recipe)=> {
-  //     if(recipe.date == this.state.selectedDate) {
-  //       this.setState({RecipeForDate: recipe})
-  //     }
-  //   })
-  // }
-
+  searchAllRecipeForDate = () => {
+    this.state.AllRecipe.map((recipe)=> {
+      console.log('prewarning date state',recipe.date)
+      if(recipe.date === this.state.selectedDate) {
+        this.setState({RecipeForDate: recipe})
+        console.log('run through that')
+        console.log('APP: recipe.date = ', recipe.date)
+        console.log('APP: this.state.selected Date', this.state.selectedDate)
+      }
+    })
+  }
     
-  dateComponent = () => {
-    return <SelectedDatePage selectedDate={this.state.selectedDate} RecipeForDate={this.state.RecipeForDate} searchAllRecipeForDate={this.searchAllRecipeForDate} />
+  datePage = () => {
+    return <SelectedDatePage 
+    selectedDate={this.state.selectedDate} 
+    RecipeForDate={this.state.RecipeForDate} 
+    searchAllRecipeForDate={this.searchAllRecipeForDate} />
   }
 
   mealPlanPage = () => {
     return <MealPlanPage AllRecipe={this.state.AllRecipe} searchDB={this.searchDB}/> 
   }
 
-  // loopDay = () => {
-  //   const arr = []
-  //   console.log('all recipes',this.state.AllRecipe)
-  //   this.state.AllRecipe.map((wrap) => {
-  //     wrap.recipe.map((i) => {
-  //       i.ingredients.map((ia) => {
-  //       const singleItem =  ia
-  //       arr.push(singleItem)
-  //       })
-  //     })
-  //   })
-  //   return arr
-  // }
-
   render() {
 
   return (
     <div>
-      {/* {this.loopDay()} */}
     <Router>
     <div className="App">
       <Nav> </Nav>
-      <Route path='/' exact component={this.homeComponent}/>
+      <Route path='/' exact component={this.homePage}/>
       <Route path='/mealsPlan' component={this.mealPlanPage}/> 
-      <Route path='/date/:dateId' component={this.dateComponent}/>
+      <Route path='/date/:dateId' component={this.datePage}/>
       <Route path='/shoppinglist' render={() => <ShoppingListPage loopDay={this.loopDay} AllRecipe={this.state.AllRecipe} AllIngredients={this.state.AllIngredients}/>}
       /> 
     </div>
