@@ -25,7 +25,6 @@ class App extends Component{
   searchDB = async () => {
     await axios.get('/api/')
     .then (res => {
-      console.log('this is working')
       this.setState({
         AllRecipe: res.data
       })
@@ -41,26 +40,12 @@ class App extends Component{
     return <Home datePicked={this.datePicked}/> 
   }
 
-  // searchDateOnDB = async () => {
-  //   await axios.get('/api/' + this.state.selectedDate,)
-  //   .then (res => {
-  //     if (res.data){
-  //       console.log('searchDateOnDB start')
-  //       // this.setState({existingRecipe: true})
-  //       this.setState({recipe: res.data.recipe})
-  //       console.log('recipe state on date',this.state.recipe)
-  //       }
-  //     })
-  //   }
 
   searchAllRecipeForDate = () => {
     this.state.AllRecipe.map((recipe)=> {
       if(recipe.date == this.state.selectedDate) {
-        console.log('ran through ', recipe)
         this.setState({RecipeForDate: recipe})
-        console.log('APP: state for RecipeForDate',this.state.RecipeForDate)
       }
-      console.log('app recipefordate state', this.state.RecipeForDate)
     })
   }
 

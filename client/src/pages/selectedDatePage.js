@@ -75,7 +75,6 @@ class Date extends Component {
 
     
   render() {
-    // {console.log('alldate props', this.props.RecipeForDate)}
     const contents = this.props.RecipeForDate ? (
     <div> 
       <h3>Saved recipe for {this.props.selectedDate} </h3>

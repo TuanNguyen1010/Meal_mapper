@@ -24,12 +24,10 @@ class RecipeSearchBox extends Component {
     e.preventDefault()
     this.grabRecipe()
     console.log(this.props.selectedDate)
-    console.log('happy')
   }
 
   loadRecipe = () => {
-    if (this.state.avail)
-{    console.log('logging state',this.state.recipes)
+    if (this.state.avail){
     return this.state.recipes.map((recipe, key) => (
       <RecipeResult 
         key={key}
@@ -40,8 +38,8 @@ class RecipeSearchBox extends Component {
         selectedDate ={this.props.selectedDate}
         changeExistingRecipeState={this.props.changeExistingRecipeState}
       />
-      ))}
-  }
+      ))
+    }}
   render() {
     return (
       <div> 

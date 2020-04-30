@@ -26,7 +26,6 @@ class MealPlanPage extends Component {
   render() {
     return (
       <div className='MealPlanPage'> 
-      {console.log(this.props.AllRecipe)}
         <h1> Saved Meal Plans </h1>
         {this.props.AllRecipe.map((recipe, key) => (
         <MealPlanRecipe
