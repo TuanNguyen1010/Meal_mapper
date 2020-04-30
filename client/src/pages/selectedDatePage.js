@@ -7,7 +7,8 @@ import { Redirect } from 'react-router-dom'
 class Date extends Component {
     constructor(props){
       super(props)
-      this.searchDateOnDB()
+      this.props.searchAllRecipeForDate()
+      // this.searchDateOnDB()
       this.state = {
         searchData: null,
         query: "chicken",
@@ -33,31 +34,36 @@ class Date extends Component {
       this.setState({existingRecipe: true})
     }
 
-    searchDateOnDB = async () => {
-      await axios.get('/api/' + this.props.selectedDate,)
-      .then (res => {
-        if (res.data){
-          this.setState({existingRecipe: true})
-          console.log(res.data)
-          this.setState({recipe_one: {
-            savedRecipeTitle: res.data.recipe[0].title,
-            savedRecipeIngredients: res.data.recipe[0].ingredients,
-            savedRecipeCalories: res.data.recipe[0].calories,
-            savedRecipeImage: res.data.recipe[0].image
-            }
-          })
-        }
-        if (res.data && res.data.recipe_two){
-          this.setState({recipe_two: {
-            savedRecipeTitle: res.data.recipe_two.title,
-            savedRecipeIngredients: res.data.recipe_two.ingredients,
-            savedRecipeCalories: res.data.recipe_two.calories,
-            savedRecipeImage: res.data.recipe_two.image
-            }
-          })  
-        }
-      })
-    }
+    // searchDateOnDB = async () => {
+    //   await axios.get('/api/' + this.props.selectedDate,)
+    //   .then (res => {
+    //     if (res.data){
+    //       console.log('searchDateOnDB start')
+    //       this.setState({existingRecipe: true})
+    //       this.setState({recipe: res.data.recipe})
+    //       console.log('recipe state on date',this.state.recipe)
+
+    //       // res.data.recipe.map((list) => {
+    //       // this.setState({recipe_one: {
+    //       //   savedRecipeTitle: list.title,
+    //       //   savedRecipeIngredients: list.ingredients,
+    //       //   savedRecipeCalories: list.calories,
+    //       //   savedRecipeImage: list.image
+    //       //   }
+    //       // })
+    //       // })
+    //     }
+    //     // if (res.data && res.data.recipe[0]){
+    //     //   this.setState({recipe_two: {
+    //     //     savedRecipeTitle: res.data.recipe_two.title,
+    //     //     savedRecipeIngredients: res.data.recipe_two.ingredients,
+    //     //     savedRecipeCalories: res.data.recipe_two.calories,
+    //     //     savedRecipeImage: res.data.recipe_two.image
+    //     //     }
+    //     //   })  
+    //     // }
+    //   })
+    // }
 
     renderRedirectToHome = (load) => {
       if (this.props.selectedDate === '2020-04-16') {
@@ -67,14 +73,26 @@ class Date extends Component {
       }
     }
 
+    
   render() {
-    const contents = this.state.existingRecipe ? (
+    // {console.log('alldate props', this.props.RecipeForDate)}
+    const contents = this.props.RecipeForDate ? (
     <div> 
       <h3>Saved recipe for {this.props.selectedDate} </h3>
-      < ExistingRecipe selectedDate ={this.props.selectedDate} savedRecipeTitle={this.state.recipe_one.savedRecipeTitle} savedRecipeCalories={this.state.recipe_one.savedRecipeCalories} savedRecipeImage={this.state.recipe_one.savedRecipeImage} savedRecipeIngredients={this.state.recipe_one.savedRecipeIngredients}/>
-      < ExistingRecipe selectedDate ={this.props.selectedDate} savedRecipeTitle={this.state.recipe_two.savedRecipeTitle} savedRecipeCalories={this.state.recipe_two.savedRecipeCalories} savedRecipeImage={this.state.recipe_two.savedRecipeImage} savedRecipeIngredients={this.state.recipe_two.savedRecipeIngredients}/>  
+      <h1>TITLE {this.props.RecipeForDate.recipe[0].title}</h1>
+      < ExistingRecipe 
+      selectedDate ={this.props.selectedDate} 
+      savedRecipeTitle={this.props.RecipeForDate.recipe[0].title} 
+      savedRecipeCalories={this.props.RecipeForDate.recipe[0].calories} 
+      savedRecipeImage={this.props.RecipeForDate.recipe[0].image} 
+      savedRecipeIngredients={this.props.RecipeForDate.recipe[0].ingredients}
+      />
       <h3 className='more_search'>Search for another recipe to cook on {this.props.selectedDate}</h3>
-      <RecipeSearchBox selectedDate ={this.props.selectedDate} changeExistingRecipeState={this.changeExistingRecipeState}/>
+      <RecipeSearchBox 
+      selectedDate ={this.props.selectedDate} 
+      changeExistingRecipeState={this.changeExistingRecipeState}
+      />
+      
     </div>
     ) : (
       <div>
