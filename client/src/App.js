@@ -38,18 +38,21 @@ class App extends Component{
     await this.setState( {selectedDate: date})
     console.log('APP: change date state to: ',this.state.selectedDate)
   }
-
+  
+  resetRecipeState = () => {
+    this.setState({RecipeForDate: null})
+  }
+  
   homePage = () => {
-    return <Home datePicked={this.datePicked} selectedDate={this.state.selectedDate}/> 
+    return <Home datePicked={this.datePicked} selectedDate={this.state.selectedDate} resetRecipeState={this.resetRecipeState}/> 
   }
 
 
   searchAllRecipeForDate = () => {
     this.state.AllRecipe.map((recipe)=> {
-      console.log('prewarning date state',recipe.date)
       if(recipe.date === this.state.selectedDate) {
         this.setState({RecipeForDate: recipe})
-        console.log('run through that')
+        console.log('run through searchALlRecipe')
         console.log('APP: recipe.date = ', recipe.date)
         console.log('APP: this.state.selected Date', this.state.selectedDate)
       }

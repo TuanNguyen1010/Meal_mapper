@@ -8,15 +8,15 @@ class Calender extends Component {
   constructor(props){
     super(props)
     this.state ={
-      dateToday: '2020-04-16',
       datePickerInputDate: null,
       redirect: false
     }
   }
-  onChange = async ( dateString) => {
+  calenderOnChange = ( dateString) => {
     const dateFormatted = dateString.getDate() + "-0" + (dateString.getMonth() + 1) + "-" + dateString.getFullYear()
-    await this.setState({ datePickerInputDate: dateFormatted })
+    this.setState({ datePickerInputDate: dateFormatted })
     this.props.datePicked(dateFormatted)
+    this.props.resetRecipeState()
     this.setRedirect()
   }
 
@@ -39,11 +39,10 @@ class Calender extends Component {
         <div data-test='calenderComponent'>
           <DatePickerInput
             onChange={(dateString) => { 
-              this.onChange(dateString)
+              this.calenderOnChange(dateString)
             }}
-            value={this.state.dateToday}
-            className='my-custom-datepicker-component'
-            // {...anyReactInputProps}
+            value={''}
+            className='-datepicker-component'
           />
         </div>
       </div>
