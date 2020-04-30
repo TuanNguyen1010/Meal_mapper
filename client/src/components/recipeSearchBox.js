@@ -14,7 +14,8 @@ class RecipeSearchBox extends Component {
   grabRecipe = async () => {
     const APP_ID = "a3ad555a"
     const API_KEY = "b9c79644c2f78df9d76f77fc33c0fa24"
-    const response = await fetch(`https://api.edamam.com/search?q=${this.state.searchData}&app_id=${APP_ID}&app_key=${API_KEY}`).then(response => response.json())
+    const response = await fetch(`https://api.edamam.com/search?q=${this.state.searchData}&app_id=${APP_ID}&app_key=${API_KEY}`)
+    .then(response => response.json())
     this.setState({recipes: response.hits})
     this.setState({avail: true})
     console.log( this.state.recipes)

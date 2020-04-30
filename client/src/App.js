@@ -7,6 +7,7 @@ import SelectedDatePage from './pages/selectedDatePage'
 import MealPlanPage from './pages/mealPlanPage'
 import Nav from './nav/nav'
 import axios from 'axios'
+import ShoppingListPage from './pages/shoppingListPage'
 
 class App extends Component{
   constructor(props){
@@ -68,6 +69,7 @@ class App extends Component{
       <Route path='/' exact component={this.homeComponent}></Route>
       <Route path='/mealsPlan' component={this.mealPlanPage}/> 
       <Route path='/date/:dateId' component={this.dateComponent}></Route>
+      <Route path='/shoppinglist' render={() => <ShoppingListPage/>}/> 
     </div>
     </Router>
   );
