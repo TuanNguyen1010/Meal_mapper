@@ -30,7 +30,7 @@ class Date extends Component {
     }}
 
     changeExistingRecipeState = async () => {
-      await this.searchDateOnDB()
+      await this.props.searchAllRecipeForDate()
       this.setState({existingRecipe: true})
     }
 
@@ -80,13 +80,16 @@ class Date extends Component {
     <div> 
       <h3>Saved recipe for {this.props.selectedDate} </h3>
       <h1>TITLE {this.props.RecipeForDate.recipe[0].title}</h1>
+      {this.props.RecipeForDate.recipe.map((recipes) => (
       < ExistingRecipe 
       selectedDate ={this.props.selectedDate} 
-      savedRecipeTitle={this.props.RecipeForDate.recipe[0].title} 
-      savedRecipeCalories={this.props.RecipeForDate.recipe[0].calories} 
-      savedRecipeImage={this.props.RecipeForDate.recipe[0].image} 
-      savedRecipeIngredients={this.props.RecipeForDate.recipe[0].ingredients}
+      savedRecipeTitle={recipes.title} 
+      savedRecipeCalories={recipes.calories} 
+      savedRecipeImage={recipes.image} 
+      savedRecipeIngredients={recipes.ingredients}
       />
+      ))
+      }
       <h3 className='more_search'>Search for another recipe to cook on {this.props.selectedDate}</h3>
       <RecipeSearchBox 
       selectedDate ={this.props.selectedDate} 
