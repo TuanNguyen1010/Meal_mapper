@@ -14,7 +14,8 @@ class App extends Component{
     super(props)
     this.state ={
       selectedDate: '2020-04-16',
-      AllRecipe: []
+      AllRecipe: [],
+      AllIngredients: []
     }
   }
 
@@ -42,13 +43,13 @@ class App extends Component{
   }
 
 
-  searchAllRecipeForDate = () => {
-    this.state.AllRecipe.map((recipe)=> {
-      if(recipe.date == this.state.selectedDate) {
-        this.setState({RecipeForDate: recipe})
-      }
-    })
-  }
+  // searchAllRecipeForDate = () => {
+  //   this.state.AllRecipe.map((recipe)=> {
+  //     if(recipe.date == this.state.selectedDate) {
+  //       this.setState({RecipeForDate: recipe})
+  //     }
+  //   })
+  // }
 
     
   dateComponent = () => {
@@ -59,19 +60,36 @@ class App extends Component{
     return <MealPlanPage AllRecipe={this.state.AllRecipe} searchDB={this.searchDB}/> 
   }
 
+  // loopDay = () => {
+  //   const arr = []
+  //   console.log('all recipes',this.state.AllRecipe)
+  //   this.state.AllRecipe.map((wrap) => {
+  //     wrap.recipe.map((i) => {
+  //       i.ingredients.map((ia) => {
+  //       const singleItem =  ia
+  //       arr.push(singleItem)
+  //       })
+  //     })
+  //   })
+  //   return arr
+  // }
 
   render() {
 
   return (
+    <div>
+      {/* {this.loopDay()} */}
     <Router>
     <div className="App">
       <Nav> </Nav>
-      <Route path='/' exact component={this.homeComponent}></Route>
+      <Route path='/' exact component={this.homeComponent}/>
       <Route path='/mealsPlan' component={this.mealPlanPage}/> 
-      <Route path='/date/:dateId' component={this.dateComponent}></Route>
-      <Route path='/shoppinglist' render={() => <ShoppingListPage/>}/> 
+      <Route path='/date/:dateId' component={this.dateComponent}/>
+      <Route path='/shoppinglist' render={() => <ShoppingListPage loopDay={this.loopDay} AllRecipe={this.state.AllRecipe} AllIngredients={this.state.AllIngredients}/>}
+      /> 
     </div>
     </Router>
+    </div>
   );
 }}
 
