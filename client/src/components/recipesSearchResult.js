@@ -39,7 +39,7 @@ class RecipeSearchResult extends Component {
             } else {
             axios.post('/api/', recipeData)
             this.props.changeExistingRecipeState()
-            console.log('clicked Yes', res)
+            console.log('clicked Yes')
             }
             })
         }},

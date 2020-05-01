@@ -33,9 +33,9 @@ class Date extends Component {
     const contents = this.props.RecipeForDate ? (
     <div> 
       <h3>Saved recipe for {this.props.selectedDate} </h3>
-      <h1>TITLE {this.props.RecipeForDate.recipe[0].title}</h1>
-      {this.props.RecipeForDate.recipe.map((recipes) => (
+      {this.props.RecipeForDate.recipe.map((recipes, key) => (
       < ExistingRecipe 
+      key={key}
       selectedDate ={this.props.selectedDate} 
       savedRecipeTitle={recipes.title} 
       savedRecipeCalories={recipes.calories} 

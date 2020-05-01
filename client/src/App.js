@@ -36,7 +36,6 @@ class App extends Component{
 
   datePicked = async (date) => {
     await this.setState( {selectedDate: date})
-    console.log('APP: change date state to: ',this.state.selectedDate)
   }
   
   resetRecipeState = () => {
@@ -47,14 +46,10 @@ class App extends Component{
     return <Home datePicked={this.datePicked} selectedDate={this.state.selectedDate} resetRecipeState={this.resetRecipeState}/> 
   }
 
-
   searchAllRecipeForDate = () => {
     this.state.AllRecipe.map((recipe)=> {
       if(recipe.date === this.state.selectedDate) {
         this.setState({RecipeForDate: recipe})
-        console.log('run through searchALlRecipe')
-        console.log('APP: recipe.date = ', recipe.date)
-        console.log('APP: this.state.selected Date', this.state.selectedDate)
       }
     })
   }
@@ -66,8 +61,16 @@ class App extends Component{
     searchAllRecipeForDate={this.searchAllRecipeForDate} />
   }
 
+  loopThroughAllRecipe = () => {
+    this.state.AllRecipe.map(() => {
+
+    })
+  }
+
   mealPlanPage = () => {
-    return <MealPlanPage AllRecipe={this.state.AllRecipe} searchDB={this.searchDB}/> 
+    return <MealPlanPage 
+    AllRecipe={this.state.AllRecipe} 
+    searchDB={this.searchDB}/> 
   }
 
   render() {

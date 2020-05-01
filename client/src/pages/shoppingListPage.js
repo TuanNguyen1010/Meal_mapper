@@ -7,7 +7,7 @@ class ShoppingList extends Component{
     this.props.AllRecipe.map((wrap) => {
       wrap.recipe.map((i) => {
         i.ingredients.map((ia) =>{
-          allIngredients.push(ia)
+          allIngredients.push({ia})
         })
       })
     })

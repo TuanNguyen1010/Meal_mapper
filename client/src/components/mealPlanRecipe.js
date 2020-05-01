@@ -8,10 +8,10 @@ class MealPlanRecipe extends Component{
         <div className='mealPlanRecipeContainer'>
           <h3 className='mealPlanRecipeDate'> {this.props.date}</h3> 
           <div className='mealPlanRecipeMiddle'>
-          <h3 className='mealPlanRecipeTitle'>title: {this.props.title}</h3>
+          <h3 className='mealPlanRecipeTitle'>{this.props.title}</h3>
           <img className='mealPlanRecipeImage' src={this.props.image} alt="" /> 
           </div>
-          <h3 className='mealPlanRecipeIngredient'> ingredients: {this.props.ingredients.map((ingredients, key) => (
+          <h3 className='mealPlanRecipeIngredient'> {this.props.ingredients.map((ingredients, key) => (
             <div key={key}>{ingredients.text}</div>
           )
           )}</h3>
