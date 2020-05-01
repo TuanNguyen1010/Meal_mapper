@@ -39,7 +39,6 @@ class RecipeSearchResult extends Component {
             } else {
             axios.post('/api/', recipeData)
             this.props.changeExistingRecipeState()
-            console.log('clicked Yes')
             }
             })
         }},
@@ -63,7 +62,7 @@ class RecipeSearchResult extends Component {
         <div className='recipe-search-result-calories-container'>
         <h2 className='recipe-search-result-calories'> Calories: {this.props.calories}</h2>
     </div>
-    <h2 className='recipe-search-result-ingredients' onClick={() => console.log(typeof [])} > Ingredients : {this.props.ingredients.map((ingredient, key) => 
+    <h2 className='recipe-search-result-ingredients'> Ingredients : {this.props.ingredients.map((ingredient, key) => 
     <div key={key}> {ingredient.text} </div>
     )} </h2>
     <img className='recipe-search-result-image' src={this.props.image} alt="" onClick={() => {this.saveRecipe()}} /> 

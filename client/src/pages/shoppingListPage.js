@@ -4,21 +4,20 @@ class ShoppingList extends Component{
   
   render(){
     const allIngredients = []
-    this.props.AllRecipe.map((wrap) => {
-      wrap.recipe.map((i) => {
-        i.ingredients.map((ia) =>{
-          allIngredients.push({ia})
+    this.props.AllRecipe.map((recipesWithDates) => {
+      recipesWithDates.recipe.map((individualRecipes) => {
+        individualRecipes.ingredients.map((individualIngredients) =>{
+          allIngredients.push({individualIngredients})
         })
       })
     })
-
     return (
     <div> 
       <h1> ShoppingList</h1>
         <div className='ShppingListnPage'> 
         <h3> ingredients </h3>
         {allIngredients.map((ingredients, key) => (
-          <div key={key}> {ingredients.text} </div> 
+          <div key={key}> {ingredients.individualIngredients.text} </div> 
         ))}
         </div>
     </div>

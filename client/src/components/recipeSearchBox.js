@@ -18,13 +18,11 @@ class RecipeSearchBox extends Component {
     .then(response => response.json())
     this.setState({recipes: response.hits})
     this.setState({avail: true})
-    console.log( this.state.recipes)
   }
 
   getSearch = (e) => {
     e.preventDefault()
     this.grabRecipe()
-    console.log(this.props.selectedDate)
   }
 
   loadRecipe = () => {

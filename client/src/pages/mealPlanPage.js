@@ -5,10 +5,9 @@ class MealPlanPage extends Component {
 
   render() {
     const AllRecipesList = []
-    this.props.AllRecipe.map((wrap) => {
-      wrap.recipe.map((i) => {
-        AllRecipesList.push({date: wrap.date, recipe: i})
-        console.log(AllRecipesList)
+    this.props.AllRecipe.map((recipesWithDates) => {
+      recipesWithDates.recipe.map((individualRecipes) => {
+        AllRecipesList.push({date: recipesWithDates.date, recipe: individualRecipes})
       })
     })
 
