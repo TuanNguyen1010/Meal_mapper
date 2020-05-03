@@ -16,14 +16,18 @@ class App extends Component{
       selectedDate: '',
       AllRecipe: [],
       AllIngredients: [],
-      RecipeForDate: null
+      RecipeForDate: [],
+      existingRecipe: false
     }
   }
 
   componentDidMount() {
     this.searchDB()
   }
-
+  
+  resetState = () => {
+    this.setState({existingRecipe: false})
+  }
 
   searchDB = async () => {
     await axios.get('/api/')
@@ -39,17 +43,27 @@ class App extends Component{
   }
   
   resetRecipeState = () => {
-    this.setState({RecipeForDate: null})
+    this.setState({
+      RecipeForDate: null,
+      existingRecipe: false
+    })
+    this.searchDB()
   }
   
   homePage = () => {
-    return <Home datePicked={this.datePicked} selectedDate={this.state.selectedDate} resetRecipeState={this.resetRecipeState}/> 
+    return <Home 
+    datePicked={this.datePicked} 
+    selectedDate={this.state.selectedDate} 
+    resetRecipeState={this.resetRecipeState}/> 
   }
 
-  searchAllRecipeForDate = () => {
-    this.state.AllRecipe.map((recipe)=> {
+  searchAllRecipeForDate = async () => {
+    await this.state.AllRecipe.map((recipe)=> {
       if(recipe.date === this.state.selectedDate) {
-        this.setState({RecipeForDate: recipe})
+        this.setState({
+          RecipeForDate: recipe,
+          existingRecipe: true
+        })
       }
     })
   }
@@ -58,7 +72,12 @@ class App extends Component{
     return <SelectedDatePage 
     selectedDate={this.state.selectedDate} 
     RecipeForDate={this.state.RecipeForDate} 
-    searchAllRecipeForDate={this.searchAllRecipeForDate} />
+    searchAllRecipeForDate={this.searchAllRecipeForDate} 
+    existingRecipe={this.state.existingRecipe}
+    resetState={this.resetState}
+    searchDB={this.searchDB}
+    allRecipe={this.state.allRecipe}
+    />
   }
 
   loopThroughAllRecipe = () => {

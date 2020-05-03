@@ -5,7 +5,7 @@ import axios from 'axios'
 
 class RecipeSearchResult extends Component {
 
-  saveRecipe = (recipeNumber) => {
+  saveRecipe = () => {
     const recipeData = {
       "date": this.props.selectedDate,
       "recipe": [
@@ -14,14 +14,23 @@ class RecipeSearchResult extends Component {
         "ingredients": this.props.ingredients,
         "image": this.props.image}]
     }
-    // const recipeDataTwo = {
-    //   "date": this.props.selectedDate,
-    //   "recipe_two": 
-    //     {"title": this.props.title,
-    //     "calories": this.props.calories,
-    //     "ingredients": this.props.ingredients,
-    //     "image": this.props.image}
-    // }
+
+    const addToAdditionalDB = async() => {
+      await axios.put('/api/', recipeData)
+      .then( async () => {
+        await this.props.searchDB()
+        this.props.resetState()
+        this.props.searchAllRecipeForDate() 
+      })
+    }
+
+    const addToDB = async() => {
+     await axios.post('/api/', recipeData)
+     .then( async () => {
+      await this.props.searchDB()   
+      this.props.searchAllRecipeForDate()     
+     })
+    }
 
     confirmAlert({
       title: `Save this ${this.props.title} recipe to this ${this.props.selectedDate}`,
@@ -30,15 +39,12 @@ class RecipeSearchResult extends Component {
         {
           label: 'Yes',
           onClick: async () => {
-            // this.saveToDB()
             await axios.get('/api/' + this.props.selectedDate)
             .then(res =>{
               if (res.data){
-              axios.put('/api/', recipeData)
-              this.props.changeExistingRecipeState()
+              addToAdditionalDB()
             } else {
-            axios.post('/api/', recipeData)
-            this.props.changeExistingRecipeState()
+            addToDB()
             }
             })
         }},

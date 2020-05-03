@@ -8,7 +8,7 @@ class RecipeSearchBox extends Component {
       searchData: null,
       query: "chicken",
       recipes: null,
-      avail: false
+      availableRecipes: false
     }
   }
   grabRecipe = async () => {
@@ -17,7 +17,7 @@ class RecipeSearchBox extends Component {
     const response = await fetch(`https://api.edamam.com/search?q=${this.state.searchData}&app_id=${APP_ID}&app_key=${API_KEY}`)
     .then(response => response.json())
     this.setState({recipes: response.hits})
-    this.setState({avail: true})
+    this.setState({availableRecipes: true})
   }
 
   getSearch = (e) => {
@@ -26,7 +26,7 @@ class RecipeSearchBox extends Component {
   }
 
   loadRecipe = () => {
-    if (this.state.avail){
+    if (this.state.availableRecipes){
     return this.state.recipes.map((recipe, key) => (
       <RecipeResult 
         key={key}
@@ -35,7 +35,9 @@ class RecipeSearchBox extends Component {
         image={recipe.recipe.image}
         ingredients={recipe.recipe.ingredients}
         selectedDate ={this.props.selectedDate}
-        changeExistingRecipeState={this.props.changeExistingRecipeState}
+        searchAllRecipeForDate={this.props.searchAllRecipeForDate}
+        resetState={this.props.resetState}
+        searchDB={this.props.searchDB}
       />
       ))
     }}

@@ -9,16 +9,9 @@ class Date extends Component {
       this.props.searchAllRecipeForDate()
       this.state = {
         searchData: null,
-        query: "chicken",
         recipes: null,
         avail: false,
-        existingRecipe: false,
     }}
-
-    changeExistingRecipeState = async () => {
-      await this.props.searchAllRecipeForDate()
-      this.setState({existingRecipe: true})
-    }
 
     renderRedirectToHome = () => {
       if (this.props.selectedDate === '') {
@@ -30,7 +23,7 @@ class Date extends Component {
 
     
   render() {
-    const contents = this.props.RecipeForDate ? (
+    const contents = this.props.existingRecipe ? (
     <div> 
       <h3>Saved recipe for {this.props.selectedDate} </h3>
       {this.props.RecipeForDate.recipe.map((recipes, key) => (
@@ -48,6 +41,9 @@ class Date extends Component {
       <RecipeSearchBox 
       selectedDate ={this.props.selectedDate} 
       changeExistingRecipeState={this.changeExistingRecipeState}
+      searchAllRecipeForDate={this.props.searchAllRecipeForDate} 
+      resetState={this.props.resetState}
+      searchDB={this.props.searchDB}
       />
       
     </div>
@@ -56,7 +52,10 @@ class Date extends Component {
       <h1>Search for a recipe</h1>
       <RecipeSearchBox 
       selectedDate ={this.props.selectedDate} 
-      changeExistingRecipeState={this.changeExistingRecipeState}/>
+      searchAllRecipeForDate={this.props.searchAllRecipeForDate}
+      searchDB={this.props.searchDB}
+      />
+      
       </div>
     )
     return(
