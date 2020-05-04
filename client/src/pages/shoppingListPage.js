@@ -5,9 +5,9 @@ class ShoppingList extends Component{
   render(){
     const allIngredients = []
     this.props.AllRecipe.map((recipesWithDates) => {
-      recipesWithDates.recipe.map((individualRecipes) => {
-        individualRecipes.ingredients.map((individualIngredients) =>{
-          allIngredients.push({individualIngredients})
+      return recipesWithDates.recipe.map((individualRecipes) => {
+        return individualRecipes.ingredients.map((individualIngredients) =>{
+          return allIngredients.push({individualIngredients})
         })
       })
     })

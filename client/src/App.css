@@ -66,7 +66,7 @@ nav{
 .recipe-search-result-component{
   display: flex;
   height: auto;
-  width: 10px;
+  /* width: 1px; */
 }
 
 .recipe-search-result-container {
@@ -103,15 +103,14 @@ nav{
 } */
 
 .All_recipe_container {
+  display: flex;
   /* margin-top: 20px;
   margin-bottom: 80px; 
   margin: auto;
   width: 80%;
   padding: 10px; 
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  position: relative; */
+  display: flex; */
+  /* flex-wrap: wrap; */
 }
 
 .recipe-search-result-title {
@@ -130,7 +129,7 @@ nav{
 }
 
 .recipe-search-result-ingredients {
-  background-color: #6c757d;
+  /* background-color: #6c757d; */
   padding: 25px;
   height: max-content;
   font-size: x-small;

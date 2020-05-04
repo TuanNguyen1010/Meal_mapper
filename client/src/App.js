@@ -58,9 +58,9 @@ class App extends Component{
   }
 
   searchAllRecipeForDate = async () => {
-    await this.state.AllRecipe.map((recipe)=> {
+    return await this.state.AllRecipe.map((recipe)=> {
       if(recipe.date === this.state.selectedDate) {
-        this.setState({
+        return this.setState({
           RecipeForDate: recipe,
           existingRecipe: true
         })
@@ -80,11 +80,11 @@ class App extends Component{
     />
   }
 
-  loopThroughAllRecipe = () => {
-    this.state.AllRecipe.map(() => {
+  // loopThroughAllRecipe = () => {
+  //   return this.state.AllRecipe.map(() => {
 
-    })
-  }
+  //   })
+  // }
 
   mealPlanPage = () => {
     return <MealPlanPage 

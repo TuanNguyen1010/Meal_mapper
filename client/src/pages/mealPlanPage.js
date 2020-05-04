@@ -6,8 +6,8 @@ class MealPlanPage extends Component {
   render() {
     const AllRecipesList = []
     this.props.AllRecipe.map((recipesWithDates) => {
-      recipesWithDates.recipe.map((individualRecipes) => {
-        AllRecipesList.push({date: recipesWithDates.date, recipe: individualRecipes})
+      return recipesWithDates.recipe.map((individualRecipes) => {
+        return AllRecipesList.push({date: recipesWithDates.date, recipe: individualRecipes})
       })
     })
 
