@@ -66,12 +66,12 @@ class RecipeSearchResult extends Component {
       <h1> {this.props.title} </h1>
       </div>
         <div className='recipe-search-result-calories-container'>
-        <h2 className='recipe-search-result-calories'> Calories: {this.props.calories}</h2>
+        {/* <h2 className='recipe-search-result-calories'> Calories: {this.props.calories}</h2> */}
     </div>
+    <img className='recipe-search-result-image' src={this.props.image} alt="" onClick={() => {this.saveRecipe()}} /> 
     <h2 className='recipe-search-result-ingredients'> Ingredients : {this.props.ingredients.map((ingredient, key) => 
     <div key={key}> {ingredient.text} </div>
     )} </h2>
-    <img className='recipe-search-result-image' src={this.props.image} alt="" onClick={() => {this.saveRecipe()}} /> 
   </div>
   </div>
   )

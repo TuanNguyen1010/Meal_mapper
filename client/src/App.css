@@ -44,14 +44,14 @@ nav{
   justify-content: space-around;
   align-items: center;
   min-height: 10vh;
-  background-color: firebrick;
+  background-color: grey;
   color: black;
 }
 
  .nav-links{
    font-size: 20px;
    font-weight: bold;
-   background-color: firebrick;
+   background-color: grey;
    list-style: none;
    justify-content: space-around;
    align-items: center;
@@ -63,24 +63,22 @@ nav{
   background-color: orange;
 }
  
-.recipe-search-result-component, .recipe-search-result-container {
+.recipe-search-result-component{
   display: flex;
-}
-
-.recipe-search-result-component {
-  justify-content: center;
-  padding: 10px;
-  
+  height: auto;
+  width: 10px;
 }
 
 .recipe-search-result-container {
+  display: flex;
+  height: auto;
   background-color: rgb(235,235,235, 0.8);
   border-radius: 30px;
   margin: 50px;
   
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-  transition: .5s ease; 
-  
+  transition: .5s ease;
+  flex-direction: column;
 }
 
 .recipe-search-result-container:hover {
@@ -91,10 +89,36 @@ nav{
   opacity: 0.4;
 }
 
-.recipe-search-result-title {
-  font-size: 30px;
-  margin-left: 90px;
+
+.recipe-search-result-component {
+  /* justify-content: center;
+  padding: 10px;
+   */
+
+}
+/* ul {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+} */
+
+.All_recipe_container {
+  /* margin-top: 20px;
+  margin-bottom: 80px; 
+  margin: auto;
+  width: 80%;
+  padding: 10px; 
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
+  position: relative; */
+}
+
+.recipe-search-result-title {
+  font-size: small;
+  /* margin-left: 90px;
+  justify-content: center; */
+  height: 100px;
 }
 
 .recipe-search-result-image {
@@ -108,7 +132,9 @@ nav{
 .recipe-search-result-ingredients {
   background-color: #6c757d;
   padding: 25px;
-  font-size: small;
+  height: max-content;
+  font-size: x-small;
+  align-items: flex-end;
 }
 
 .more_search {

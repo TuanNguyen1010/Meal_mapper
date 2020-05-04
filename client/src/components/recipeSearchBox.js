@@ -61,9 +61,9 @@ class RecipeSearchBox extends Component {
           Search
         </button>
         </form>
-        <div>
+        {/* <div className="All_recipe_container"> */}
         {this.loadRecipe()}
-        </div>
+        {/* </div> */}
       </div>
     )
   
