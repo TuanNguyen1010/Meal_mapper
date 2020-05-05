@@ -2,11 +2,16 @@ import React, {Component} from 'react'
 
 class MealPlanRecipe extends Component{
 
+  dateFormatter = (dateObject) => {
+    const dateFormatted = dateObject.getDate() + "-0" + (dateObject.getMonth() + 1) + "-" + dateObject.getFullYear()
+    return dateFormatted
+  }
+
   render() {
     return (
       <div className='Meal-Plan-Recipe-Component'> 
         <div className='Meal-Plan-Recipe-Container'>
-          <h3 className='Meal-Plan-Recipe-Date'> {this.props.date}</h3> 
+          <h3 className='Meal-Plan-Recipe-Date'> {this.dateFormatter(this.props.date)}</h3> 
           <div className='mealPlanRecipeMiddle'>
           <h3 className='Meal-Plan-Recipe-Title'>{this.props.title}</h3>
           <img className='Meal-Plan-Recipe-Image' src={this.props.image} alt="" /> 

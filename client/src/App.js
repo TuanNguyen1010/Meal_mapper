@@ -80,10 +80,17 @@ class App extends Component{
     />
   }
 
+  dateObjectFormatter = (year, month, day) => {
+    const dateObject = new Date(year, month, day, 10, 33, 30, 0)
+    return dateObject
+  }
+
   mealPlanPage = () => {
     return <MealPlanPage 
     AllRecipe={this.state.AllRecipe} 
-    searchDB={this.searchDB}/> 
+    searchDB={this.searchDB}
+    dateObjectFormatter={this.dateObjectFormatter}
+    /> 
   }
 
   render() {
