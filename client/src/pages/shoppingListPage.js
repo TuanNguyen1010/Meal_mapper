@@ -12,9 +12,9 @@ class ShoppingList extends Component{
       })
     })
     return (
-    <div> 
-      <h1> ShoppingList</h1>
-        <div className='ShppingListnPage'> 
+    <div className='Shopping-List-Component'> 
+      <h1 > ShoppingList</h1>
+        <div className='ShoppingListnPage'> 
         <h3> ingredients </h3>
         {allIngredients.map((ingredients, key) => (
           <div key={key}> {ingredients.individualIngredients.text} </div> 

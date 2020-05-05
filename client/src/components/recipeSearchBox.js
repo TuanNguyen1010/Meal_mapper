@@ -6,7 +6,6 @@ class RecipeSearchBox extends Component {
     super(props)
     this.state = {
       searchData: null,
-      query: "chicken",
       recipes: null,
       availableRecipes: false
     }

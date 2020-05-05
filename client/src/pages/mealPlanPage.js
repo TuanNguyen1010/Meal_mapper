@@ -12,7 +12,7 @@ class MealPlanPage extends Component {
     })
 
     return (
-      <div className='MealPlanPage'> 
+      <div className='Meal-Plan-Page-container'> 
         <h1> Saved Meal Plans </h1>
         {AllRecipesList.map((recipe, key) => (
         <MealPlanRecipe

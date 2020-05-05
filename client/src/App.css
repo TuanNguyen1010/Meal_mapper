@@ -119,22 +119,29 @@ nav{
 }
 
 .recipe-search-result-ingredients {
-  /* background-color: #6c757d; */
   padding: 25px;
   height: max-content;
   font-size: smaller;
   align-items: flex-end;
   height: auto;
   width: auto;
+  text-align: left;
 }
 
 .more_search {
   padding-top: 40px;
 }
-.mealPlanRecipeComponent {
+
+/*  Meal Plan pages */
+
+.Meal-Plan-Recipe-Component {
 }
 
-.mealPlanRecipeContainer {
+.Meal-Plan-Page-container {
+  background-color: white;
+}
+
+.Meal-Plan-Recipe-Container {
   background-color: honeydew;
   flex-wrap: wrap;
   flex-basis: 20%;
@@ -147,36 +154,38 @@ nav{
   transition: .5s ease; 
 }
 
-.mealPlanRecipeContainer:hover {
+.Meal-Plan-Recipe-Container:hover {
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
 }
 
-/* .mealPlanRecipeContainer:hover > *{
-  opacity: 0.4;
-} */
-
-/* .mealPlanRecipeContainer:hover > *:hover{
-  opacity: 1;
-} */
-
-.mealPlanRecipeDate{
+.Meal-Plan-Recipe-Date{
 justify-content: left;
-width: 20%;
+padding-left: 40px;
+padding-right: 20px;
+height: auto;
+/* width: 20%;
 margin-left: 90px;
-margin-bottom: 10px;
+margin-bottom: 10px; */
 }
 
-.mealPlanRecipeTitle, .mealPlanRecipeImage {
+.Meal-Plan-Recipe-Title, .Meal-Plan-Recipe-Image {
  display: flex;
 }
 
-.mealPlanRecipeImage {
+.Meal-Plan-Recipe-Image {
 width: 140px;
 height: 140px;
 padding-left: 60px;
 }
 
-.mealPlanRecipeIngredient {
+.Meal-Plan-Recipe-Ingredient {
 margin-left: 60px;
 font-size: smaller;
+text-align: left;
 }
+
+/* Shopping list page */
+
+/* .Shopping-List-Component{
+  background-color: green;
+} */

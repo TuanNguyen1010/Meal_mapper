@@ -80,12 +80,6 @@ class App extends Component{
     />
   }
 
-  // loopThroughAllRecipe = () => {
-  //   return this.state.AllRecipe.map(() => {
-
-  //   })
-  // }
-
   mealPlanPage = () => {
     return <MealPlanPage 
     AllRecipe={this.state.AllRecipe} 
