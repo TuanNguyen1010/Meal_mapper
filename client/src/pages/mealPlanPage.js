@@ -30,7 +30,7 @@ class MealPlanPage extends Component {
     const sortedRecipe = RecipesSavedAfterToday.sort((a, b) => b.date - a.date).reverse()
 
     return (
-      <div className='Meal-Plan-Page-container'> 
+      <div className='Meal-Plan-Page-Component'> 
       {console.log(sortedRecipe)}
         <h1> Saved Meal Plans </h1>
         {sortedRecipe.map((recipe, key) => (

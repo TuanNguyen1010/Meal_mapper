@@ -24,7 +24,7 @@ class Date extends Component {
     
   render() {
     const contents = this.props.existingRecipe ? (
-    <div> 
+    <div className='Existing-Recipe-Component'> 
       <h3>Saved recipe for {this.props.selectedDate} </h3>
       {this.props.RecipeForDate.recipe.map((recipes, key) => (
       < ExistingRecipe 

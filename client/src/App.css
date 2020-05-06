@@ -58,15 +58,12 @@ nav{
    display: flex;
    width: 40%;
  }
- 
-.MealPlanPage {
-  background-color: orange;
-}
- 
+
+ /*  recipe search results */
+
 .recipe-search-result-component{
   display: flex;
   height: auto;
-  /* width: 1px; */
 }
 
 .recipe-search-result-container {
@@ -93,11 +90,6 @@ nav{
 .recipe-search-result-component {
    flex: 1 0 21%;
 }
-/* ul {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-} */
 
 .All_recipe_container {
   display: flex;
@@ -132,12 +124,54 @@ nav{
   padding-top: 40px;
 }
 
-/*  Meal Plan pages */
 
-.Meal-Plan-Recipe-Component {
+/* Existing Recipe page */
+
+.Existing-Recipe-Container {
+  /* border-radius: 30px; */
+ /* background-color: green; */
+ height: auto;
+ width: auto;
+ display: flex;
+ margin: 15px 200px 60px;
+ border-radius: 30px;
+ margin: 50px;
+ 
+ box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 
-.Meal-Plan-Page-container {
+.Existing-Recipe-Title {
+  height: 50px;
+  width: 450px;
+  /* background-color: red; */
+}
+
+.Existing-Recipe-Calories {
+  height: auto;
+  width: auto;
+}
+
+.Existing-Recipe-Image {
+  /* height: auto;
+  width: auto; */
+}
+
+.Existing-Recipe-Ingredients {
+  height: auto;
+  width: 350px;
+  /* background-color: purple; */
+}
+
+.Existing-Recipe-button {
+  height: 100px;
+  margin-top: 80px;
+  background-color: lightblue;
+}
+
+/*  Meal Plan pages */
+
+
+.Meal-Plan-Recipe-Component {
   background-color: white;
 }
 
@@ -149,7 +183,6 @@ nav{
   border: 60px;
   border-radius: 30px;
   margin: 50px;
-  
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   transition: .5s ease; 
 }
@@ -163,19 +196,16 @@ justify-content: left;
 padding-left: 40px;
 padding-right: 20px;
 height: auto;
-/* width: 20%;
-margin-left: 90px;
-margin-bottom: 10px; */
 }
 
-.Meal-Plan-Recipe-Title, .Meal-Plan-Recipe-Image {
+/* .Meal-Plan-Recipe-Title, .Meal-Plan-Recipe-Image {
  display: flex;
-}
+} */
 
 .Meal-Plan-Recipe-Image {
 width: 140px;
 height: 140px;
-padding-left: 60px;
+/* padding-left: 60px; */
 }
 
 .Meal-Plan-Recipe-Ingredient {
