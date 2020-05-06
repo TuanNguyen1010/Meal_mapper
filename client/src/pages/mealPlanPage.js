@@ -31,7 +31,6 @@ class MealPlanPage extends Component {
 
     return (
       <div className='Meal-Plan-Page-Component'> 
-      {console.log(sortedRecipe)}
         <h1> Saved Meal Plans </h1>
         {sortedRecipe.map((recipe, key) => (
         <MealPlanRecipe

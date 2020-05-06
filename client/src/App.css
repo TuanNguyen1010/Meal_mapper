@@ -142,7 +142,9 @@ nav{
 
 .Existing-Recipe-Title {
   height: 50px;
-  width: 450px;
+  width: 650px;
+  text-align: left;
+  margin-left: 60px;
   /* background-color: red; */
 }
 
@@ -157,8 +159,10 @@ nav{
 }
 
 .Existing-Recipe-Ingredients {
+  margin-left: 60px;
   height: auto;
-  width: 350px;
+  width: 800px;
+  text-align: left;
   /* background-color: purple; */
 }
 
@@ -198,9 +202,10 @@ padding-right: 20px;
 height: auto;
 }
 
-/* .Meal-Plan-Recipe-Title, .Meal-Plan-Recipe-Image {
- display: flex;
-} */
+.Meal-Plan-Recipe-Title {
+ margin-left: 60px;
+ text-align: left;
+}
 
 .Meal-Plan-Recipe-Image {
 width: 140px;

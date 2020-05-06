@@ -12,7 +12,10 @@ class RecipeSearchResult extends Component {
         {"title": this.props.title,
         "calories": this.props.calories,
         "ingredients": this.props.ingredients,
-        "image": this.props.image}]
+        "image": this.props.image,
+        'healthLabel': this.props.healthLabels,
+        'instructions': this.props.url
+        }]
     }
 
     const addToAdditionalDB = async() => {
@@ -66,7 +69,6 @@ class RecipeSearchResult extends Component {
       <h1> {this.props.title} </h1>
       </div>
         <div className='recipe-search-result-calories-container'>
-        {/* <h2 className='recipe-search-result-calories'> Calories: {this.props.calories}</h2> */}
     </div>
     <img className='recipe-search-result-image' src={this.props.image} alt="" onClick={() => {this.saveRecipe()}} /> 
     <h2 className='recipe-search-result-ingredients'> Ingredients : {this.props.ingredients.map((ingredient, key) => 

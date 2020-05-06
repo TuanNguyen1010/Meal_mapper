@@ -17,6 +17,7 @@ class RecipeSearchBox extends Component {
     .then(response => response.json())
     this.setState({recipes: response.hits})
     this.setState({availableRecipes: true})
+    console.log(this.state.recipes)
   }
 
   getSearch = (e) => {
@@ -33,6 +34,8 @@ class RecipeSearchBox extends Component {
         calories={recipe.recipe.calories.toFixed(0)} 
         image={recipe.recipe.image}
         ingredients={recipe.recipe.ingredients}
+        healthLabels={recipe.recipe.healthLabels}
+        url={recipe.recipe.url}
         selectedDate ={this.props.selectedDate}
         searchAllRecipeForDate={this.props.searchAllRecipeForDate}
         resetState={this.props.resetState}
