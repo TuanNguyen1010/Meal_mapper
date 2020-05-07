@@ -14,7 +14,7 @@ class RecipeSearchResult extends Component {
         "ingredients": this.props.ingredients,
         "image": this.props.image,
         'healthLabel': this.props.healthLabels,
-        'instructions': this.props.url
+        'url': this.props.url
         }]
     }
 
