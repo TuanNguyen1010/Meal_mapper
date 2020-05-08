@@ -11,10 +11,10 @@ class MealPlanRecipe extends Component{
     return (
       <div className='Meal-Plan-Recipe-Container'> 
         <h3 className='Meal-Plan-Recipe-Date'> {this.dateFormatter(this.props.date)}</h3> 
-        <img className='Meal-Plan-Recipe-Image' src={this.props.image} alt="" /> 
+        <img className='Meal-Plan-Recipe-Image' data-test='Meal-Plan-image' src={this.props.image} alt="" /> 
         <div className='mealPlanRecipeMiddle'>
-        <h3 className='Meal-Plan-Recipe-Title'>{this.props.title}</h3>
-        <h3 className='Meal-Plan-Recipe-Ingredient'> {this.props.ingredients.map((ingredients, key) => (
+        <h3 className='Meal-Plan-Recipe-Title' data-test='Meal-Plan-title'>{this.props.title}</h3>
+        <h3 className='Meal-Plan-Recipe-Ingredient' data-test='Meal-Plan-ingredient'> {this.props.ingredients.map((ingredients, key) => (
           <div key={key}>{ingredients.text}</div>
         )
         )}</h3>
