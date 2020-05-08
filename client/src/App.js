@@ -35,7 +35,7 @@ class App extends Component{
       this.setState({
         AllRecipe: res.data
       })
-    })
+    }).catch(err => console.log(err)) 
   }
 
   datePicked = async (date) => {
