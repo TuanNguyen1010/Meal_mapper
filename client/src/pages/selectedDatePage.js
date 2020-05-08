@@ -24,7 +24,7 @@ class Date extends Component {
     
   render() {
     const contents = this.props.existingRecipe ? (
-    <div className='Existing-Recipe-Component'>
+    <div className='Existing-Recipe-Component' data-test='Selected-Date-Page-With-Existing-Recipe'>
       {console.log(this.props.RecipeForDate)}
       <h3>Saved recipe for {this.props.selectedDate} </h3>
       {this.props.RecipeForDate.recipe.map((recipes, key) => (
@@ -50,7 +50,7 @@ class Date extends Component {
       
     </div>
     ) : (
-      <div>
+      <div data-test='Selected-Date-Page-Without-Existing-Recipe'>
       <h1>Search for a recipe</h1>
       <RecipeSearchBox 
       selectedDate ={this.props.selectedDate} 
