@@ -9,8 +9,8 @@ class MealPlanRecipe extends Component{
 
   render() {
     return (
-      <div className='Meal-Plan-Recipe-Container'> 
-        <h3 className='Meal-Plan-Recipe-Date'> {this.dateFormatter(this.props.date)}</h3> 
+      <div className='Meal-Plan-Recipe-Container' data-test='Meal-Plan-Container'> 
+        <h3 className='Meal-Plan-Recipe-Date' data-test='Meal-Plan-date'> {this.dateFormatter(this.props.date)}</h3> 
         <img className='Meal-Plan-Recipe-Image' data-test='Meal-Plan-image' src={this.props.image} alt="" /> 
         <div className='mealPlanRecipeMiddle'>
         <h3 className='Meal-Plan-Recipe-Title' data-test='Meal-Plan-title'>{this.props.title}</h3>
