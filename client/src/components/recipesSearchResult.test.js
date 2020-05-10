@@ -18,5 +18,6 @@ describe('RecipeSearchResult', () => {
       image={imageMock}/>)
 
     expect(wrapper.find("[data-test='recipe-Result-container']").length).toBe(1)
+    expect(wrapper.find("[data-test='recipe-Result-image']").props().src).toEqual(imageMock)
   })
 })

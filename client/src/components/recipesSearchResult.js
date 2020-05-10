@@ -70,7 +70,7 @@ class RecipeSearchResult extends Component {
       </div>
         <div className='recipe-search-result-calories-container'>
     </div>
-    <img className='recipe-search-result-image' src={this.props.image} alt="" onClick={() => {this.saveRecipe()}} /> 
+    <img className='recipe-search-result-image' data-test='recipe-Result-image' src={this.props.image} alt="" onClick={() => {this.saveRecipe()}} /> 
     <h2 className='recipe-search-result-ingredients'> Ingredients : {this.props.ingredients.map((ingredient, key) => 
     <div key={key}> {ingredient.text} </div>
     )} </h2>
