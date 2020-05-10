@@ -21,21 +21,20 @@ class RecipeSearchResult extends Component {
     }
   }
 
-  addToAdditionalDB = async() => {
-    await axios.put('/api/', this.state.recipeData)
-    .then( async () => {
-      await this.props.searchDB()
-      this.props.resetState()
-      this.props.searchAllRecipeForDate() 
-    })
+  refreshPage = async () => {
+    await this.props.searchDB()
+    this.props.resetState()
+    this.props.searchAllRecipeForDate() 
   }
 
-  addToDB = async() => {
-   await axios.post('/api/', this.state.recipeData)
-   .then( async () => {
-    await this.props.searchDB()   
-    this.props.searchAllRecipeForDate()     
-   })
+  addToAdditionalDB = async(recipeData) => {
+    await axios.put('/api/', recipeData)
+    .then( () => this.refreshPage())
+  }
+
+  addToDB = async(recipeData) => {
+   await axios.post('/api/', recipeData)
+   .then( () => this.refreshPage())
   }
 
   saveRecipe = () => {
@@ -49,9 +48,9 @@ class RecipeSearchResult extends Component {
             await axios.get('/api/' + this.props.selectedDate)
             .then(res =>{
               if (res.data){
-              this.addToAdditionalDB()
+              this.addToAdditionalDB(this.state.recipeData)
             } else {
-            this.addToDB()
+            this.addToDB(this.state.recipeData)
             }
             })
         }},

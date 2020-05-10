@@ -43,8 +43,8 @@ class Date extends Component {
       selectedDate ={this.props.selectedDate} 
       changeExistingRecipeState={this.changeExistingRecipeState}
       searchAllRecipeForDate={this.props.searchAllRecipeForDate} 
-      resetState={this.props.resetState}
       searchDB={this.props.searchDB}
+      resetState={this.props.resetState}
       />
       
     </div>
@@ -55,6 +55,7 @@ class Date extends Component {
       selectedDate ={this.props.selectedDate} 
       searchAllRecipeForDate={this.props.searchAllRecipeForDate}
       searchDB={this.props.searchDB}
+      resetState={this.props.resetState}
       />
       
       </div>
