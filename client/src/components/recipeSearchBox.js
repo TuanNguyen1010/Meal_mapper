@@ -51,6 +51,7 @@ class RecipeSearchBox extends Component {
           className="search-form"
         >  
         <input className="search-input" 
+          data-test='recipe-Search-Input'
           type ="text" 
           onChange={ async (e) => {
             await this.setState({searchData: e.target.value})
