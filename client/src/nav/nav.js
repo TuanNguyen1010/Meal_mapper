@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Link } from "react-router-dom";
 
 function Nav() {
   return (
-    <nav> 
+    <nav data-test='Nav-Bar'> 
       <h3> Meal Mapper</h3>
       <ul className='nav-links'> 
       <Link to='/'> Home</Link>
