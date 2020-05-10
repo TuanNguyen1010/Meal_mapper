@@ -15,7 +15,7 @@ class App extends Component{
     this.state ={
       selectedDate: '',
       AllRecipe: [],
-      AllIngredients: [],
+      // AllIngredients: [],
       RecipeForDate: [],
       existingRecipe: false
     }
@@ -103,7 +103,7 @@ class App extends Component{
       <Route path='/' exact component={this.homePage}/>
       <Route path='/mealsPlan' component={this.mealPlanPage}/> 
       <Route path='/date/:dateId' component={this.datePage}/>
-      <Route path='/shoppinglist' render={() => <ShoppingListPage loopDay={this.loopDay} AllRecipe={this.state.AllRecipe} AllIngredients={this.state.AllIngredients}/>}
+      <Route path='/shoppinglist' render={() => <ShoppingListPage AllRecipe={this.state.AllRecipe}/>}
       /> 
     </div>
     </Router>

@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 
-class ShoppingList extends Component{
+class ShoppingListPage extends Component{
   
   render(){
     const allIngredients = []
@@ -12,7 +12,7 @@ class ShoppingList extends Component{
       })
     })
     return (
-    <div className='Shopping-List-Component'> 
+    <div className='Shopping-List-Component' data-test='Shopping-List-Component'> 
       <h1 > ShoppingList</h1>
         <div className='ShoppingListnPage'> 
         <h3> ingredients </h3>
@@ -26,4 +26,4 @@ class ShoppingList extends Component{
   }
 }
 
-export default ShoppingList
+export default ShoppingListPage

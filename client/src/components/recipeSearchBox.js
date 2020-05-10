@@ -32,7 +32,6 @@ class RecipeSearchBox extends Component {
       <RecipeResult 
         key={key}
         title={recipe.recipe.label} 
-        // calories={recipe.recipe.calories.toFixed(0)} 
         image={recipe.recipe.image}
         ingredients={recipe.recipe.ingredients}
         healthLabels={recipe.recipe.healthLabels}
