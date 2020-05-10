@@ -94,6 +94,11 @@
     "babel-plugin-react-remove-properties": "^0.3.0"
   },
   "jest": {
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "/src/serviceWorker.js",
+      "/src/index.js"
+    ],
     "roots": [
       "<rootDir>/src"
     ],
