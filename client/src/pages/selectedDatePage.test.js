@@ -26,7 +26,6 @@ describe('SelectedDatePage', () => {
       existingRecipe={existingRecipeMock}
       RecipeForDate={RecipeForDateMock}
       />) 
-    expect(wrapper.find("[data-test='Selected-Date-Page-With-Existing-Recipe']").length).toEqual(1)
-    
+    expect(wrapper.find("[data-test='Selected-Date-Page-With-Existing-Recipe']").length).toEqual(1)    
   })
 })

@@ -45,7 +45,7 @@ class RecipeSearchBox extends Component {
     }}
   render() {
     return (
-      <div> 
+      <div data-test='recipe-Search-Box'> 
       <form 
           onSubmit={this.getSearch}
           className="search-form"
