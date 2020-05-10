@@ -1,6 +1,5 @@
 import React from 'react';
-import Enzyme, {shallow} from 'enzyme';
-import { render } from '@testing-library/react';
+import {shallow} from 'enzyme';
 import App from './App';
 import mockAxios from 'axios'
 jest.mock('axios')

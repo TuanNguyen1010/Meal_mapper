@@ -63,7 +63,7 @@ class RecipeSearchResult extends Component {
 
   render() {
   return(
-  <div className='recipe-search-result-component'> 
+  <div className='recipe-search-result-component' data-test='recipe-Result-container' > 
     <div className='recipe-search-result-container' onClick={() => {this.saveRecipe()}}>
       <div className='recipe-search-result-title'>
       <h1> {this.props.title} </h1>
