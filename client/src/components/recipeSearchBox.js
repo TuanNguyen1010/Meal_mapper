@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import RecipeResult from './recipesSearchResult'
+import axios from 'axios'
 
 class RecipeSearchBox extends Component {
   constructor(props){
@@ -13,11 +14,11 @@ class RecipeSearchBox extends Component {
   grabRecipe = async () => {
     const APP_ID = "a3ad555a"
     const API_KEY = "b9c79644c2f78df9d76f77fc33c0fa24"
-    const response = await fetch(`https://api.edamam.com/search?q=${this.state.searchData}&app_id=${APP_ID}&app_key=${API_KEY}`)
-    .then(response => response.json())
-    this.setState({recipes: response.hits})
+    await axios.get(`https://api.edamam.com/search?q=${this.state.searchData}&app_id=${APP_ID}&app_key=${API_KEY}`)
+    .then( res => {
+    this.setState({recipes: res.data.hits})
     this.setState({availableRecipes: true})
-    console.log(this.state.recipes)
+    })
   }
 
   getSearch = (e) => {
@@ -31,7 +32,7 @@ class RecipeSearchBox extends Component {
       <RecipeResult 
         key={key}
         title={recipe.recipe.label} 
-        calories={recipe.recipe.calories.toFixed(0)} 
+        // calories={recipe.recipe.calories.toFixed(0)} 
         image={recipe.recipe.image}
         ingredients={recipe.recipe.ingredients}
         healthLabels={recipe.recipe.healthLabels}
@@ -46,7 +47,8 @@ class RecipeSearchBox extends Component {
   render() {
     return (
       <div data-test='recipe-Search-Box'> 
-      <form 
+      <form
+          data-test='recipe-Search-Submit' 
           onSubmit={this.getSearch}
           className="search-form"
         >  
