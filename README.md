@@ -14,12 +14,17 @@ Express: a fast, unopinionated, minimalist web framework for Node.js I used to g
    * React: a JavaScript library I used to build the user interface and gather data from the Express and external APIs.
    * CSS Flexbox: a flexible box layout module I used to design flexible responsive layout structure without using float or positioning.
 
+
+  ### Testing frameworks:
+   * Jest: a JavaScript Testing Framework with a focus on simplicity.
+   * Enzyme: a JavaScript Testing utility for React that makes it easier to test the React Components' output.
+   * Supertest: a npm package that gives you get the ability to send GET, POST, PUT, PATCH and DELETE requests.
+
+
 ## To install and run the code
 * Clone the repo 
 * Run $ npm install for Back-end dependecies
 * Run $ npm run client-install for Front-end dependecies
-
-
 
 ## Features
 - User can select date on calender to start planning
@@ -28,4 +33,9 @@ Express: a fast, unopinionated, minimalist web framework for Node.js I used to g
 - User can add multiple recipes
 - Usere can view all saved recipe with date saved
 - User can generate a shopping list from all recipes within selected date
+
+## Running Tests
+
+- Run `$ npm test` for the Express endpoint tests
+- Run `$ cd client && npm test` for the React tests
 
