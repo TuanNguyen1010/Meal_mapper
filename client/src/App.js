@@ -15,10 +15,10 @@ class App extends Component{
     this.state ={
       selectedDate: '',
       AllRecipe: [],
-      // AllIngredients: [],
+      validRecipes: [],
       RecipeForDate: [],
       existingRecipe: false
-    }
+    }  
   }
 
   componentDidMount() {
@@ -85,11 +85,15 @@ class App extends Component{
     return dateObject
   }
 
+  setValidRecipes = async (recipe) => {
+    return await this.setState({validRecipes: recipe})
+  }
+
   mealPlanPage = () => {
     return <MealPlanPage 
     AllRecipe={this.state.AllRecipe} 
-    searchDB={this.searchDB}
     dateObjectFormatter={this.dateObjectFormatter}
+    setValidRecipes={this.setValidRecipes}
     /> 
   }
 

@@ -32,6 +32,7 @@ class MealPlanPage extends Component {
     return (
       <div className='Meal-Plan-Page-Component' data-test='Meal-Plan-Page-Component'> 
         <h1> Saved Meal Plans </h1>
+        {this.props.setValidRecipes(sortedRecipe)}
         {sortedRecipe.map((recipe, key) => (
         <MealPlanRecipe
         key={key}
