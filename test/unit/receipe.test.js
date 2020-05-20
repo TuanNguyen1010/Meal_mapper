@@ -1,4 +1,4 @@
-const RecipeController = require('../../controller/recipeController')
+const RecipeController = require('../../routes/api/recipeApi')
 const httpMock = require('node-mocks-http')
 const RecipeModel = require('../../model/recipeModel')
 const CreateMock = require('../mock/mockCreate.json')
