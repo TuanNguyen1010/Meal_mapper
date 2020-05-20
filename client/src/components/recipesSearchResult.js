@@ -54,10 +54,7 @@ class RecipeSearchResult extends Component {
             }
             })
         }},
-        {
-          label: 'No',
-          onClick: () => alert('Click No')
-        }
+        {label: 'No',}
       ]
     });
   }
@@ -65,6 +62,7 @@ class RecipeSearchResult extends Component {
   
 
   render() {
+    console.log(this.props.ingredients)
   return(
   <div className='recipe-search-result-component' > 
     <div className='recipe-search-result-container' data-test='recipe-Result-container' onClick={() => {this.saveRecipe()}}>

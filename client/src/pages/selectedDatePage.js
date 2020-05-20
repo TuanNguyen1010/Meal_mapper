@@ -56,8 +56,7 @@ class Date extends Component {
       searchAllRecipeForDate={this.props.searchAllRecipeForDate}
       searchDB={this.props.searchDB}
       resetState={this.props.resetState}
-      />
-      
+      /> 
       </div>
     )
     return(

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Calender from '../components/calender'
+import RecipeSearchBox from '../components/recipeSearchBox'
 
 class HomePage extends Component {
 
@@ -7,11 +8,21 @@ class HomePage extends Component {
     return(
       <div data-test='calender-component' > 
       <h1> Meal Mapper</h1>
-      <h2> Select a date to plan your next meal</h2>
+
+      <h2>Search for a recipe</h2>
+      <RecipeSearchBox 
+      changeExistingRecipeState={this.changeExistingRecipeState}
+      searchAllRecipeForDate={this.props.searchAllRecipeForDate} 
+      searchDB={this.props.searchDB}
+      resetState={this.props.resetState}
+      />
+      <div>
+      <h2> Select a date to save your next meal</h2>
         <Calender 
         datePicked={this.props.datePicked}
         resetRecipeState={this.props.resetRecipeState}
         /> 
+      </div>
       </div>
     ) 
   }
