@@ -12,23 +12,18 @@ class RecipeSearchBox extends Component {
       availableRecipes: false
     }
   }
-  fetchRecipe = async () => {
-    const APP_ID = "a3ad555a"
-    const API_KEY = "b9c79644c2f78df9d76f77fc33c0fa24"
-    await axios.get(`https://api.edamam.com/search?q=${this.state.searchData}&app_id=${APP_ID}&app_key=${API_KEY}`)
-    .then( res => {
-    this.setState({recipes: res.data.hits})
-    this.setState({availableRecipes: true})
-    })
-  }
-
-  getSearch = (e) => {
+  
+  getSearch = async (e) => {
     e.preventDefault()
-    this.fetchRecipe()
+    const fetchedRecipes = await useFetchRecipes(this.state.searchData)
+    console.log('fetched recipes = ' + fetchedRecipes)
+    this.setState({recipes: fetchedRecipes})
+    this.setState({availableRecipes: true})
   }
 
   loadRecipe = () => {
     if (this.state.availableRecipes){
+      // console.log("recipes are = "+this.state.recipes)
     return this.state.recipes.map((recipe, key) => (
       <RecipeResult 
         key={key}
