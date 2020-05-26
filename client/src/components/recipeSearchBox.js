@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import RecipeResult from './recipesSearchResult'
 import axios from 'axios'
+import useFetchRecipes from './useFetchRecipes'
 
 class RecipeSearchBox extends Component {
   constructor(props){
@@ -11,7 +12,7 @@ class RecipeSearchBox extends Component {
       availableRecipes: false
     }
   }
-  grabRecipe = async () => {
+  fetchRecipe = async () => {
     const APP_ID = "a3ad555a"
     const API_KEY = "b9c79644c2f78df9d76f77fc33c0fa24"
     await axios.get(`https://api.edamam.com/search?q=${this.state.searchData}&app_id=${APP_ID}&app_key=${API_KEY}`)
@@ -23,7 +24,7 @@ class RecipeSearchBox extends Component {
 
   getSearch = (e) => {
     e.preventDefault()
-    this.grabRecipe()
+    this.fetchRecipe()
   }
 
   loadRecipe = () => {
@@ -44,6 +45,8 @@ class RecipeSearchBox extends Component {
       ))
     }}
   render() {
+    // const {recipes} = this.fetchRecipe(this.state.searchData)
+
     return (
       <div data-test='recipe-Search-Box'> 
       <form
@@ -53,7 +56,7 @@ class RecipeSearchBox extends Component {
         >  
         <input className="search-input" 
           data-test='recipe-Search-Input'
-          type ="text" 
+          type="text" 
           onChange={ async (e) => {
             await this.setState({searchData: e.target.value})
           }}

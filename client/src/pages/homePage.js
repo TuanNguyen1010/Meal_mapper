@@ -7,7 +7,15 @@ class HomePage extends Component {
   render() {
     return(
       <div data-test='calender-component' > 
+
       <h1> Meal Mapper</h1>
+      <div>
+        <h2> Select a date to save your next meal</h2>
+        <Calender 
+        datePicked={this.props.datePicked}
+        resetRecipeState={this.props.resetRecipeState}
+        /> 
+      </div>
 
       <h2>Search for a recipe</h2>
       <RecipeSearchBox 
@@ -16,13 +24,6 @@ class HomePage extends Component {
       searchDB={this.props.searchDB}
       resetState={this.props.resetState}
       />
-      <div>
-      <h2> Select a date to save your next meal</h2>
-        <Calender 
-        datePicked={this.props.datePicked}
-        resetRecipeState={this.props.resetRecipeState}
-        /> 
-      </div>
       </div>
     ) 
   }

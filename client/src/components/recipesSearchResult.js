@@ -38,7 +38,9 @@ class RecipeSearchResult extends Component {
   }
 
   saveRecipe = () => {
-    confirmAlert({
+    if (this.props.selectedDate == '')
+    { 
+     confirmAlert({
       title: `Save this ${this.props.title} recipe to this ${this.props.selectedDate}`,
       message: 'Are you sure to do this.',
       buttons: [
@@ -57,6 +59,7 @@ class RecipeSearchResult extends Component {
         {label: 'No',}
       ]
     });
+    }
   }
 
   
