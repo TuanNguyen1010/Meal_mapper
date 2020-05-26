@@ -19,7 +19,6 @@ describe('HomePage', () => {
 
       
     const wrapper = shallow(<MealPlanPage AllRecipe={AllRecipeMock} dateObjectFormatter={jest.fn()}/>)
-    console.log(wrapper.instance())
     expect(wrapper.find("[data-test='Meal-Plan-Page-Component']").length).toBe(1)
   })
 })

@@ -5,6 +5,7 @@ class ShoppingListPage extends Component{
   render(){
     const allIngredients = []
     this.props.AllRecipe.map((recipesWithDates) => {
+      console.log('recipes with date = ' + recipesWithDates.date)
       if (recipesWithDates.date > new Date())
       {
       return recipesWithDates.recipe.map((individualRecipes) => {
