@@ -16,8 +16,8 @@ class HomePage extends Component {
         resetRecipeState={this.props.resetRecipeState}
         /> 
       </div>
-
-      <h2>Search for a recipe</h2>
+      {console.log('Selected date = ' + this.props.selectedDate)}
+      <h2> Search for a recipe</h2>
       <RecipeSearchBox 
       changeExistingRecipeState={this.changeExistingRecipeState}
       searchAllRecipeForDate={this.props.searchAllRecipeForDate} 

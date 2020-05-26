@@ -50,7 +50,7 @@ class Date extends Component {
     </div>
     ) : (
       <div data-test='Selected-Date-Page-Without-Existing-Recipe'>
-      <h1>Search for a recipe</h1>
+      <h1>Search for a recipe to cook on {this.props.selectedDate}</h1>
       <RecipeSearchBox 
       selectedDate ={this.props.selectedDate} 
       searchAllRecipeForDate={this.props.searchAllRecipeForDate}

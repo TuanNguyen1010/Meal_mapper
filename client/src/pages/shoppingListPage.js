@@ -5,11 +5,14 @@ class ShoppingListPage extends Component{
   render(){
     const allIngredients = []
     this.props.AllRecipe.map((recipesWithDates) => {
+      if (recipesWithDates.date > new Date())
+      {
       return recipesWithDates.recipe.map((individualRecipes) => {
         return individualRecipes.ingredients.map((individualIngredients) =>{
           return allIngredients.push({individualIngredients})
         })
       })
+      }
     })
     return (
     <div className='Shopping-List-Component' data-test='Shopping-List-Component'> 

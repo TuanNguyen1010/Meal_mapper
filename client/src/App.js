@@ -13,7 +13,7 @@ class App extends Component{
   constructor(props){
     super(props)
     this.state ={
-      selectedDate: '',
+      selectedDate: false,
       AllRecipe: [],
       validRecipes: [],
       RecipeForDate: [],
@@ -38,8 +38,8 @@ class App extends Component{
     }).catch(err => console.log(err)) 
   }
 
-  datePicked = async (date) => {
-    await this.setState( {selectedDate: date})
+  datePicked = (date) => {
+   this.setState( {selectedDate: date})
   }
   
   resetRecipeState = () => {
@@ -98,7 +98,6 @@ class App extends Component{
   }
 
   render() {
-
   return (
     <div>
     <Router>

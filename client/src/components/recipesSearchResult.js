@@ -38,7 +38,7 @@ class RecipeSearchResult extends Component {
   }
 
   saveRecipe = () => {
-    if (this.props.selectedDate == '')
+  if (this.props.selectedDate)
     { 
      confirmAlert({
       title: `Save this ${this.props.title} recipe to this ${this.props.selectedDate}`,
@@ -65,7 +65,6 @@ class RecipeSearchResult extends Component {
   
 
   render() {
-    console.log(this.props.ingredients)
   return(
   <div className='recipe-search-result-component' > 
     <div className='recipe-search-result-container' data-test='recipe-Result-container' onClick={() => {this.saveRecipe()}}>
