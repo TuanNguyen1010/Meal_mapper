@@ -7,8 +7,6 @@ class HomePage extends Component {
   render() {
     return(
       <div data-test='calender-component' > 
-
-      <h1> Meal Mapper</h1>
       <div>
         <h2> Select a date to save your next meal</h2>
         <Calender 
@@ -16,7 +14,6 @@ class HomePage extends Component {
         resetRecipeState={this.props.resetRecipeState}
         /> 
       </div>
-      {console.log('Selected date = ' + this.props.selectedDate)}
       <h2> Search for a recipe</h2>
       <RecipeSearchBox 
       changeExistingRecipeState={this.changeExistingRecipeState}

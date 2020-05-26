@@ -5,11 +5,11 @@ import { BrowserRouter as Router, Link } from "react-router-dom";
 function Nav() {
   return (
     <nav data-test='Nav-Bar'> 
-      <h3> Meal Mapper</h3>
+      <h1> Meal Mapper</h1>
       <ul className='nav-links'> 
-      <Link to='/'> Home</Link>
-      <Link to='/mealsPlan'> Meals Plan</Link>
-      <Link to='/shoppingList'> Shopping List</Link>
+      <Link className='nav-link' to='/'> Home</Link>
+      <Link className='nav-link' to='/mealsPlan'> Meals Plan</Link>
+      <Link className='nav-link' to='/shoppingList'> Shopping List</Link>
       </ul>
     </nav>
   )

@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
 import RecipeResult from './recipesSearchResult'
-import axios from 'axios'
 import useFetchRecipes from './useFetchRecipes'
 
 class RecipeSearchBox extends Component {
@@ -12,7 +11,7 @@ class RecipeSearchBox extends Component {
       availableRecipes: false
     }
   }
-  
+
   getSearch = async (e) => {
     e.preventDefault()
     const fetchedRecipes = await useFetchRecipes(this.state.searchData)
@@ -23,7 +22,6 @@ class RecipeSearchBox extends Component {
 
   loadRecipe = () => {
     if (this.state.availableRecipes){
-      // console.log("recipes are = "+this.state.recipes)
     return this.state.recipes.map((recipe, key) => (
       <RecipeResult 
         key={key}

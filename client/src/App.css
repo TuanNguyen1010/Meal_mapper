@@ -219,6 +219,11 @@ font-size: smaller;
 text-align: left;
 }
 
+.nav-link {
+  color: lightblue;
+  text-decoration: none;
+}
+
 /* Shopping list page */
 
 /* .Shopping-List-Component{
