@@ -75,6 +75,7 @@ class RecipeSearchResult extends Component {
     <h2 className='recipe-search-result-ingredients'> Ingredients : {this.props.ingredients.map((ingredient, key) => 
     <div key={key}> {ingredient.text} </div>
     )} </h2>
+    <a href={this.state.recipeData.recipe[0].url} target="_blank" >recipe here </a>
   </div>
   </div>
   )
