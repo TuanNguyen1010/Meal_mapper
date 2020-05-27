@@ -32,6 +32,7 @@ class MealPlanPage extends Component {
         title={recipe.recipe.title}
         image={recipe.recipe.image}
         ingredients={recipe.recipe.ingredients}
+        url={recipe.recipe.url}
         /> 
         })
         }

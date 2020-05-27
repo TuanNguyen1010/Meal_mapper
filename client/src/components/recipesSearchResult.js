@@ -65,21 +65,22 @@ class RecipeSearchResult extends Component {
   
 
   render() {
-  return(
-  <div className='recipe-search-result-component' > 
-    <div className='recipe-search-result-container' data-test='recipe-Result-container' onClick={() => {this.saveRecipe()}}>
-      <div className='recipe-search-result-title'>
-      <h1> {this.props.title} </h1>
+    return(
+      <div className='recipe-search-result-component' > 
+        <div className='recipe-search-result-container' data-test='recipe-Result-container' onClick={() => {this.saveRecipe()}}>
+          <div className='recipe-search-result-title'>
+            <h1> {this.props.title} </h1>
+          </div>
+          <img className='recipe-search-result-image' data-test='recipe-Result-image' src={this.props.image} alt="" /> 
+          <h2 className='recipe-search-result-ingredients'> Ingredients : {this.props.ingredients.map((ingredient, key) => 
+            <div key={key}> {ingredient.text} </div>)} </h2>
+          <form action={this.props.url } target="_blank">
+            <input type="submit" value="Go to Recipe" />
+          </form>
+        </div>
       </div>
-    <img className='recipe-search-result-image' data-test='recipe-Result-image' src={this.props.image} alt="" /> 
-    <h2 className='recipe-search-result-ingredients'> Ingredients : {this.props.ingredients.map((ingredient, key) => 
-    <div key={key}> {ingredient.text} </div>
-    )} </h2>
-    <a href={this.state.recipeData.recipe[0].url} target="_blank" >recipe here </a>
-  </div>
-  </div>
-  )
-}
-}
+      )
+    }
+  }
 
 export default RecipeSearchResult;

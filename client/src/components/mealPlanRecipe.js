@@ -19,6 +19,9 @@ class MealPlanRecipe extends Component{
         )
         )}</h3>
         </div>
+        <form className='Meal-Plan-Recipe-Url' action={this.props.url } target="_blank">
+          <input type="submit" value="Go to Recipe" />
+        </form>
       </div>
     )
   }

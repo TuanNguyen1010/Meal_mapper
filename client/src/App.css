@@ -219,6 +219,11 @@ font-size: smaller;
 text-align: left;
 }
 
+.Meal-Plan-Recipe-Url {
+  justify-content: right;
+  padding: 60px;
+}
+
 .nav-link {
   color: lightblue;
   text-decoration: none;
