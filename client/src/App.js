@@ -84,13 +84,6 @@ class App extends Component{
     return await this.setState({validRecipes: recipe})
   }
 
-  mealPlanPage = () => {
-    return <MealPlanPage 
-    AllRecipe={this.state.AllRecipe} 
-    setValidRecipes={this.setValidRecipes}
-    /> 
-  }
-
   render() {
   return (
     <div>
@@ -98,7 +91,7 @@ class App extends Component{
     <div className="App">
       <Nav> </Nav>
       <Route path='/' exact component={this.homePage}/>
-      <Route path='/mealsPlan' component={this.mealPlanPage}/> 
+      <Route path='/mealsPlan' render={() => <MealPlanPage AllRecipe={this.state.AllRecipe} setValidRecipes={this.setValidRecipes}/> }/> 
       <Route path='/date/:dateId' component={this.datePage}/>
       <Route path='/shoppinglist' render={() => <ShoppingListPage AllRecipe={this.state.AllRecipe}/>}
       /> 

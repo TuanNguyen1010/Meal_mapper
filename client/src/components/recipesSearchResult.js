@@ -58,9 +58,9 @@ class RecipeSearchResult extends Component {
         }},
         {label: 'No',}
       ]
-    });
+      });
+      }
     }
-  }
 
   
 
