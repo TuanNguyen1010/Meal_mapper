@@ -1,12 +1,13 @@
 import React, {Component} from 'react'
+import changeDateStringtoDateObject from '../components/changeDateStringtoDateObject'
+
 
 class ShoppingListPage extends Component{
-  
+
   render(){
     const allIngredients = []
     this.props.AllRecipe.map((recipesWithDates) => {
-      console.log('recipes with date = ' + recipesWithDates.date)
-      if (recipesWithDates.date > new Date())
+      if (changeDateStringtoDateObject(recipesWithDates.date) > new Date())
       {
       return recipesWithDates.recipe.map((individualRecipes) => {
         return individualRecipes.ingredients.map((individualIngredients) =>{

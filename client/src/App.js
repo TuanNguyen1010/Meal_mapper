@@ -80,11 +80,6 @@ class App extends Component{
     />
   }
 
-  dateObjectFormatter = (year, month, day) => {
-    const dateObject = new Date(year, month, day, 10, 33, 30, 0)
-    return dateObject
-  }
-
   setValidRecipes = async (recipe) => {
     return await this.setState({validRecipes: recipe})
   }
@@ -92,7 +87,6 @@ class App extends Component{
   mealPlanPage = () => {
     return <MealPlanPage 
     AllRecipe={this.state.AllRecipe} 
-    dateObjectFormatter={this.dateObjectFormatter}
     setValidRecipes={this.setValidRecipes}
     /> 
   }

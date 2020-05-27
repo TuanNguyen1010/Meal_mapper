@@ -1,22 +1,14 @@
 import React, {Component} from 'react'
 import MealPlanRecipe from '../components/mealPlanRecipe'
+import changeDateStringtoDateObject from '../components/changeDateStringtoDateObject'
 
 class MealPlanPage extends Component {
-
-
-  dateStringToDateObject = (date) => {
-    return this.props.dateObjectFormatter(
-      parseInt(date.slice(6,10)), 
-      parseInt(date.slice(3,5)) - 1, 
-      parseInt(date.slice(0,2)))
-  }
-
 
   render() {
     const AllRecipesList = []
     this.props.AllRecipe.map((recipesWithDates) => {
       return recipesWithDates.recipe.map((individualRecipes) => {
-        return AllRecipesList.push({date: this.dateStringToDateObject(recipesWithDates.date), recipe: individualRecipes})
+        return AllRecipesList.push({date: changeDateStringtoDateObject(recipesWithDates.date), recipe: individualRecipes})
       })
     })
 
