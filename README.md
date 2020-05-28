@@ -39,3 +39,15 @@ Express: a fast, unopinionated, minimalist web framework for Node.js I used to g
 - Run `$ npm test` for the Express endpoint tests
 - Run `$ cd client && npm test` for the React tests
 
+## Progress Report
+
+To solve H10 error when deploy to heroku
+```
+Run $ npm add serve --save
+Add scripts in package.json
+"scripts": {
+    "dev": "react-scripts start",
+    "heroku-postbuild": "npm run build",
+    "start": "serve -s build",
+  }
+```
